@@ -7,8 +7,8 @@ const config: JestConfigWithTsJest = {
     '^.+\\.(t|j)sx?$': ['@swc/jest', { sourceMaps: 'inline' }],
   },
   moduleNameMapper: {
-    '^flowrapp$': '<rootDir>/src/index.ts',
-    '^flowrapp/(.*)$': '<rootDir>/src/$1',
+    '^flowrapp-sdk$': '<rootDir>/src/index.ts',
+    '^flowrapp-sdk/(.*)$': '<rootDir>/src/$1',
   },
   modulePathIgnorePatterns: [
     '<rootDir>/ecosystem-tests/',

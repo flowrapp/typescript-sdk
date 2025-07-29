@@ -1,5 +1,5 @@
 {
-  "name": "flowrapp",
+  "name": "flowrapp-sdk",
   "version": "0.0.1-alpha.0",
   "description": "The official TypeScript library for the Flowrapp API",
   "author": "Flowrapp <info@flowrapp.github.io>",
@@ -47,8 +47,8 @@
     "typescript-eslint": "8.31.1"
   },
   "imports": {
-    "flowrapp": ".",
-    "flowrapp/*": "./src/*"
+    "flowrapp-sdk": ".",
+    "flowrapp-sdk/*": "./src/*"
   },
   "exports": {
     ".": {
