@@ -12,11 +12,7 @@ import {
   Invitations,
 } from './invitations';
 import * as TimesheetsAPI from './timesheets';
-import {
-  TimesheetRetrieveWeeklyHoursParams,
-  TimesheetRetrieveWeeklyHoursResponse,
-  Timesheets,
-} from './timesheets';
+import { Timesheets } from './timesheets';
 import * as WorklogsAPI from './worklogs';
 import {
   WorkLogResponse,
@@ -216,9 +212,5 @@ export declare namespace Businesses {
     type InvitationDeleteParams as InvitationDeleteParams,
   };
 
-  export {
-    Timesheets as Timesheets,
-    type TimesheetRetrieveWeeklyHoursResponse as TimesheetRetrieveWeeklyHoursResponse,
-    type TimesheetRetrieveWeeklyHoursParams as TimesheetRetrieveWeeklyHoursParams,
-  };
+  export { Timesheets as Timesheets };
 }
