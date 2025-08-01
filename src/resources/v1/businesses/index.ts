@@ -15,7 +15,11 @@ export {
   type InvitationListParams,
   type InvitationDeleteParams,
 } from './invitations';
-export { Timesheets } from './timesheets';
+export {
+  Timesheets,
+  type TimesheetRetrieveWeeklyHoursResponse,
+  type TimesheetRetrieveWeeklyHoursParams,
+} from './timesheets';
 export {
   Worklogs,
   type WorkLogResponse,
