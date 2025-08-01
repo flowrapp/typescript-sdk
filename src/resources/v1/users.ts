@@ -6,7 +6,7 @@ import { RequestOptions } from '../../internal/request-options';
 
 export class Users extends APIResource {
   /**
-   * Returns a user based on the provided name
+   * Searches for and retrieves a user profile based on the provided name.
    *
    * @example
    * ```ts
