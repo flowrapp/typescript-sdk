@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.4 (2025-08-01)
+
+Full Changelog: [v0.1.0-alpha.3...v0.1.0-alpha.4](https://github.com/flowrapp/typescript-sdk/compare/v0.1.0-alpha.3...v0.1.0-alpha.4)
+
+### Features
+
+* **api:** api update ([2290e5a](https://github.com/flowrapp/typescript-sdk/commit/2290e5ae413cdb7437f6ff9e089be634ee15969e))
+
 ## 0.1.0-alpha.3 (2025-08-01)
 
 Full Changelog: [v0.1.0-alpha.2...v0.1.0-alpha.3](https://github.com/flowrapp/typescript-sdk/compare/v0.1.0-alpha.2...v0.1.0-alpha.3)
