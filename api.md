@@ -88,14 +88,6 @@ Methods:
 
 ### Timesheets
 
-Types:
-
-- <code><a href="./src/resources/v1/businesses/timesheets.ts">TimesheetRetrieveWeeklyHoursResponse</a></code>
-
-Methods:
-
-- <code title="get /api/v1/businesses/{businessId}/timesheets/weekly-hours">client.v1.businesses.timesheets.<a href="./src/resources/v1/businesses/timesheets.ts">retrieveWeeklyHours</a>(businessID, { ...params }) -> TimesheetRetrieveWeeklyHoursResponse</code>
-
 ## Invitations
 
 Types:
