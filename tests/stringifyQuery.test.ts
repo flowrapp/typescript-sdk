@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { Flowrapp } from 'flowrapp';
+import { Flowrapp } from 'flowrapp-sdk';
 
 const { stringifyQuery } = Flowrapp.prototype as any;
 
