@@ -9,8 +9,8 @@
     "esModuleInterop": true,
     "baseUrl": "./",
     "paths": {
-      "flowrapp-sdk/*": ["src/*"],
-      "flowrapp-sdk": ["src/index.ts"]
+      "flowrapp/*": ["src/*"],
+      "flowrapp": ["src/index.ts"]
     },
     "noEmit": true,
 

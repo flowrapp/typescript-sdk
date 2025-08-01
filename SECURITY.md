@@ -20,7 +20,7 @@ or products provided by Flowrapp, please follow the respective company's securit
 
 ### Flowrapp Terms and Policies
 
-Please contact info@flowrapp.github.io for any questions or concerns regarding the security of our services.
+Please contact flowraapp@gmail.com for any questions or concerns regarding the security of our services.
 
 ---
 
