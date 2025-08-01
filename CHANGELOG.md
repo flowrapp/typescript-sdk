@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.1.0-alpha.2 (2025-08-01)
+
+Full Changelog: [v0.1.0-alpha.1...v0.1.0-alpha.2](https://github.com/flowrapp/typescript-sdk/compare/v0.1.0-alpha.1...v0.1.0-alpha.2)
+
+### Features
+
+* **api:** api update ([c20d10a](https://github.com/flowrapp/typescript-sdk/commit/c20d10ace5b47c847e44e30fd6d5ccc5b8c3c5ef))
+* **api:** api update ([bab5f84](https://github.com/flowrapp/typescript-sdk/commit/bab5f84a3dbcde33b9a835cbf90ed0e20dc993f4))
+* **api:** update via SDK Studio ([be20a32](https://github.com/flowrapp/typescript-sdk/commit/be20a3257268f530ad862b9df3cd6b3b71eed372))
+* **api:** update via SDK Studio ([3350288](https://github.com/flowrapp/typescript-sdk/commit/3350288cc0f02e362b7575057bdc2458d95f4860))
+
+
+### Chores
+
+* update SDK settings ([e21cb5a](https://github.com/flowrapp/typescript-sdk/commit/e21cb5a5da20e16a91c4c09f2bc57a8ec0e59f13))
+* update SDK settings ([01526cf](https://github.com/flowrapp/typescript-sdk/commit/01526cf524ed33cdce339d2dc483754645e23750))
+
 ## 0.1.0-alpha.1 (2025-07-30)
 
 Full Changelog: [v0.0.1-alpha.0...v0.1.0-alpha.1](https://github.com/flowrapp/typescript-sdk/compare/v0.0.1-alpha.0...v0.1.0-alpha.1)
