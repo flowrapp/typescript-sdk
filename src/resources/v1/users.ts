@@ -10,12 +10,15 @@ export class Users extends APIResource {
    *
    * @example
    * ```ts
-   * const user = await client.v1.users.create({
+   * const response = await client.v1.users.createFromName({
    *   name: 'John Doe',
    * });
    * ```
    */
-  create(body: UserCreateParams, options?: RequestOptions): APIPromise<UserCreateResponse> {
+  createFromName(
+    body: UserCreateFromNameParams,
+    options?: RequestOptions,
+  ): APIPromise<UserCreateFromNameResponse> {
     return this._client.post('/api/v1/users', { body, ...options });
   }
 }
@@ -23,7 +26,7 @@ export class Users extends APIResource {
 /**
  * Response object containing user information
  */
-export interface UserCreateResponse {
+export interface UserCreateFromNameResponse {
   /**
    * Document National Identity of the user
    */
@@ -35,7 +38,7 @@ export interface UserCreateResponse {
   name?: string;
 }
 
-export interface UserCreateParams {
+export interface UserCreateFromNameParams {
   /**
    * Name of the user
    */
@@ -43,5 +46,8 @@ export interface UserCreateParams {
 }
 
 export declare namespace Users {
-  export { type UserCreateResponse as UserCreateResponse, type UserCreateParams as UserCreateParams };
+  export {
+    type UserCreateFromNameResponse as UserCreateFromNameResponse,
+    type UserCreateFromNameParams as UserCreateFromNameParams,
+  };
 }
