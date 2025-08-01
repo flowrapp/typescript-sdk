@@ -1,12 +1,12 @@
 {
-  "name": "flowrapp-sdk",
+  "name": "flowrapp",
   "version": "0.1.0-alpha.1",
   "description": "The official TypeScript library for the Flowrapp API",
-  "author": "Flowrapp <info@flowrapp.github.io>",
+  "author": "Flowrapp <flowraapp@gmail.com>",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
   "type": "commonjs",
-  "repository": "github:flowrapp/typescript-sdk",
+  "repository": "github:stainless-sdks/flowrapp-typescript",
   "license": "Apache-2.0",
   "packageManager": "yarn@1.22.22",
   "files": [

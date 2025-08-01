@@ -8,10 +8,10 @@ const client = new Flowrapp({
   baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
 });
 
-describe('resource users', () => {
+describe('resource invitations', () => {
   // skipped: tests are disabled for the time being
-  test.skip('createFromName: only required params', async () => {
-    const responsePromise = client.v1.users.createFromName({ name: 'John Doe' });
+  test.skip('accept: only required params', async () => {
+    const responsePromise = client.v1.invitations.accept({ token: 'token' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -22,7 +22,7 @@ describe('resource users', () => {
   });
 
   // skipped: tests are disabled for the time being
-  test.skip('createFromName: required and optional params', async () => {
-    const response = await client.v1.users.createFromName({ name: 'John Doe' });
+  test.skip('accept: required and optional params', async () => {
+    const response = await client.v1.invitations.accept({ token: 'token' });
   });
 });
