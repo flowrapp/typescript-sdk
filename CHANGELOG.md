@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.0-alpha.5 (2025-08-09)
+
+Full Changelog: [v0.1.0-alpha.4...v0.1.0-alpha.5](https://github.com/flowrapp/typescript-sdk/compare/v0.1.0-alpha.4...v0.1.0-alpha.5)
+
+### Chores
+
+* **internal:** move publish config ([bcb9fd5](https://github.com/flowrapp/typescript-sdk/commit/bcb9fd565430062be1b61ca983a17a1842e30010))
+* update @stainless-api/prism-cli to v5.15.0 ([390ef0c](https://github.com/flowrapp/typescript-sdk/commit/390ef0cea4a184336887a62be2f4e5366241b7fb))
+
 ## 0.1.0-alpha.4 (2025-08-01)
 
 Full Changelog: [v0.1.0-alpha.3...v0.1.0-alpha.4](https://github.com/flowrapp/typescript-sdk/compare/v0.1.0-alpha.3...v0.1.0-alpha.4)
