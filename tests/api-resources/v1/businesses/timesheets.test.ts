@@ -9,7 +9,7 @@ const client = new Flowrapp({
 });
 
 describe('resource timesheets', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieveWeeklyHours: only required params', async () => {
     const responsePromise = client.v1.businesses.timesheets.retrieveWeeklyHours('abc123', {
       week: '2025-W31',
@@ -23,7 +23,7 @@ describe('resource timesheets', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieveWeeklyHours: required and optional params', async () => {
     const response = await client.v1.businesses.timesheets.retrieveWeeklyHours('abc123', {
       week: '2025-W31',

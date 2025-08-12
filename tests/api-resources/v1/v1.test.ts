@@ -9,7 +9,7 @@ const client = new Flowrapp({
 });
 
 describe('resource v1', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('ping', async () => {
     const responsePromise = client.v1.ping();
     const rawResponse = await responsePromise.asResponse();

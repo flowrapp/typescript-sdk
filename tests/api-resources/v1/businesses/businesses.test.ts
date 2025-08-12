@@ -9,7 +9,7 @@ const client = new Flowrapp({
 });
 
 describe('resource businesses', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list', async () => {
     const responsePromise = client.v1.businesses.list();
     const rawResponse = await responsePromise.asResponse();
@@ -21,7 +21,7 @@ describe('resource businesses', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('listUsers', async () => {
     const responsePromise = client.v1.businesses.listUsers('businessId');
     const rawResponse = await responsePromise.asResponse();
@@ -33,7 +33,7 @@ describe('resource businesses', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('listUsers: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(

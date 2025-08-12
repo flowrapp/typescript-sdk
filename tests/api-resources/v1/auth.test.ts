@@ -9,7 +9,7 @@ const client = new Flowrapp({
 });
 
 describe('resource auth', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('login: only required params', async () => {
     const responsePromise = client.v1.auth.login({ password: 'pass', username: 'user' });
     const rawResponse = await responsePromise.asResponse();
@@ -21,12 +21,12 @@ describe('resource auth', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('login: required and optional params', async () => {
     const response = await client.v1.auth.login({ password: 'pass', username: 'user' });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('refreshToken: only required params', async () => {
     const responsePromise = client.v1.auth.refreshToken({ refreshToken: 'd8a1fef4-234d-4c2b-bd7a-...' });
     const rawResponse = await responsePromise.asResponse();
@@ -38,7 +38,7 @@ describe('resource auth', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('refreshToken: required and optional params', async () => {
     const response = await client.v1.auth.refreshToken({ refreshToken: 'd8a1fef4-234d-4c2b-bd7a-...' });
   });
