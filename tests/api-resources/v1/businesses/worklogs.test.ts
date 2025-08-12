@@ -9,7 +9,7 @@ const client = new Flowrapp({
 });
 
 describe('resource worklogs', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list', async () => {
     const responsePromise = client.v1.businesses.worklogs.list(0);
     const rawResponse = await responsePromise.asResponse();
@@ -21,7 +21,7 @@ describe('resource worklogs', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -33,7 +33,7 @@ describe('resource worklogs', () => {
     ).rejects.toThrow(Flowrapp.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('clockIn', async () => {
     const responsePromise = client.v1.businesses.worklogs.clockIn(0);
     const rawResponse = await responsePromise.asResponse();
@@ -45,7 +45,7 @@ describe('resource worklogs', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('clockIn: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -57,7 +57,7 @@ describe('resource worklogs', () => {
     ).rejects.toThrow(Flowrapp.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('clockOut', async () => {
     const responsePromise = client.v1.businesses.worklogs.clockOut(0);
     const rawResponse = await responsePromise.asResponse();
@@ -69,7 +69,7 @@ describe('resource worklogs', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('clockOut: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(

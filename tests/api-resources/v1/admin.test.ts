@@ -9,7 +9,7 @@ const client = new Flowrapp({
 });
 
 describe('resource admin', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('registerUser: only required params', async () => {
     const responsePromise = client.v1.admin.registerUser({
       business: [
@@ -28,7 +28,7 @@ describe('resource admin', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('registerUser: required and optional params', async () => {
     const response = await client.v1.admin.registerUser({
       business: [

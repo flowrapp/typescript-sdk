@@ -9,7 +9,7 @@ const client = new Flowrapp({
 });
 
 describe('resource pushTokens', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('delete: only required params', async () => {
     const responsePromise = client.v1.pushTokens.delete({ deviceId: 'uuid-of-device' });
     const rawResponse = await responsePromise.asResponse();
@@ -21,12 +21,12 @@ describe('resource pushTokens', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('delete: required and optional params', async () => {
     const response = await client.v1.pushTokens.delete({ deviceId: 'uuid-of-device' });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('register: only required params', async () => {
     const responsePromise = client.v1.pushTokens.register({
       token: 'abcdef123456',
@@ -42,7 +42,7 @@ describe('resource pushTokens', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('register: required and optional params', async () => {
     const response = await client.v1.pushTokens.register({
       token: 'abcdef123456',

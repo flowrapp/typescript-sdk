@@ -9,7 +9,7 @@ const client = new Flowrapp({
 });
 
 describe('resource users', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('createFromName: only required params', async () => {
     const responsePromise = client.v1.users.createFromName({ name: 'John Doe' });
     const rawResponse = await responsePromise.asResponse();
@@ -21,7 +21,7 @@ describe('resource users', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('createFromName: required and optional params', async () => {
     const response = await client.v1.users.createFromName({ name: 'John Doe' });
   });
