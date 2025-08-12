@@ -9,7 +9,7 @@ const client = new Flowrapp({
 });
 
 describe('resource invitations', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('accept: only required params', async () => {
     const responsePromise = client.v1.invitations.accept({ token: 'token' });
     const rawResponse = await responsePromise.asResponse();
@@ -21,7 +21,7 @@ describe('resource invitations', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('accept: required and optional params', async () => {
     const response = await client.v1.invitations.accept({ token: 'token' });
   });
