@@ -770,7 +770,9 @@ export class Flowrapp {
 
   v1: API.V1 = new API.V1(this);
 }
+
 Flowrapp.V1 = V1;
+
 export declare namespace Flowrapp {
   export type RequestOptions = Opts.RequestOptions;
 
