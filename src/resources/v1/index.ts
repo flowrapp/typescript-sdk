@@ -9,7 +9,7 @@ export {
   type BusinessListUsersResponse,
   type BusinessListUsersParams,
 } from './businesses/index';
-export { Invitations, type InvitationAcceptResponse, type InvitationAcceptParams } from './invitations';
+export { Invitations, type InvitationAcceptParams } from './invitations';
 export {
   PushTokens,
   type PushTokenDeleteResponse,
