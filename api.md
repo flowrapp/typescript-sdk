@@ -17,6 +17,7 @@ Types:
 Methods:
 
 - <code title="post /api/v1/users">client.v1.users.<a href="./src/resources/v1/users.ts">createFromName</a>({ ...params }) -> UserCreateFromNameResponse</code>
+- <code title="put /api/v1/users/password">client.v1.users.<a href="./src/resources/v1/users.ts">updatePassword</a>({ ...params }) -> void</code>
 
 ## PushTokens
 

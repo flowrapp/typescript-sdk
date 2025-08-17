@@ -23,5 +23,10 @@ export {
   type PushTokenDeleteParams,
   type PushTokenRegisterParams,
 } from './push-tokens';
-export { Users, type UserCreateFromNameResponse, type UserCreateFromNameParams } from './users';
+export {
+  Users,
+  type UserCreateFromNameResponse,
+  type UserCreateFromNameParams,
+  type UserUpdatePasswordParams,
+} from './users';
 export { V1, type V1PingResponse } from './v1';
