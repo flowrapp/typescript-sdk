@@ -6,7 +6,13 @@ import { Admin, AdminRegisterUserParams } from './admin';
 import * as AuthAPI from './auth';
 import { Auth, AuthLoginParams, AuthRefreshTokenParams, TokenResponse } from './auth';
 import * as InvitationsAPI from './invitations';
-import { InvitationAcceptParams, Invitations } from './invitations';
+import {
+  InvitationAcceptParams,
+  InvitationListParams,
+  InvitationListResponse,
+  InvitationRegisterParams,
+  Invitations,
+} from './invitations';
 import * as PushTokensAPI from './push-tokens';
 import {
   PushTokenDeleteParams,
@@ -96,5 +102,11 @@ export declare namespace V1 {
     type BusinessListUsersParams as BusinessListUsersParams,
   };
 
-  export { Invitations as Invitations, type InvitationAcceptParams as InvitationAcceptParams };
+  export {
+    Invitations as Invitations,
+    type InvitationListResponse as InvitationListResponse,
+    type InvitationListParams as InvitationListParams,
+    type InvitationAcceptParams as InvitationAcceptParams,
+    type InvitationRegisterParams as InvitationRegisterParams,
+  };
 }
