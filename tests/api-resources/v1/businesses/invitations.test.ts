@@ -11,9 +11,9 @@ const client = new Flowrapp({
 describe('resource invitations', () => {
   // Prism tests are disabled
   test.skip('create: only required params', async () => {
-    const responsePromise = client.v1.businesses.invitations.create('businessId', {
+    const responsePromise = client.v1.businesses.invitations.create(0, {
       email: 'invitee@example.com',
-      role: 'COLLABORATOR',
+      role: 'MANAGER',
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -26,15 +26,15 @@ describe('resource invitations', () => {
 
   // Prism tests are disabled
   test.skip('create: required and optional params', async () => {
-    const response = await client.v1.businesses.invitations.create('businessId', {
+    const response = await client.v1.businesses.invitations.create(0, {
       email: 'invitee@example.com',
-      role: 'COLLABORATOR',
+      role: 'MANAGER',
     });
   });
 
   // Prism tests are disabled
   test.skip('list', async () => {
-    const responsePromise = client.v1.businesses.invitations.list('businessId');
+    const responsePromise = client.v1.businesses.invitations.list(0);
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -48,19 +48,13 @@ describe('resource invitations', () => {
   test.skip('list: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      client.v1.businesses.invitations.list(
-        'businessId',
-        { status: 'PENDING' },
-        { path: '/_stainless_unknown_path' },
-      ),
+      client.v1.businesses.invitations.list(0, { status: 'PENDING' }, { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Flowrapp.NotFoundError);
   });
 
   // Prism tests are disabled
   test.skip('delete: only required params', async () => {
-    const responsePromise = client.v1.businesses.invitations.delete('invitationId', {
-      businessId: 'businessId',
-    });
+    const responsePromise = client.v1.businesses.invitations.delete(0, { businessId: 0 });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -72,8 +66,6 @@ describe('resource invitations', () => {
 
   // Prism tests are disabled
   test.skip('delete: required and optional params', async () => {
-    const response = await client.v1.businesses.invitations.delete('invitationId', {
-      businessId: 'businessId',
-    });
+    const response = await client.v1.businesses.invitations.delete(0, { businessId: 0 });
   });
 });

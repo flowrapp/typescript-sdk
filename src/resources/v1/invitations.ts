@@ -2,6 +2,7 @@
 
 import { APIResource } from '../../core/resource';
 import { APIPromise } from '../../core/api-promise';
+import { buildHeaders } from '../../internal/headers';
 import { RequestOptions } from '../../internal/request-options';
 
 export class Invitations extends APIResource {
@@ -10,32 +11,19 @@ export class Invitations extends APIResource {
    *
    * @example
    * ```ts
-   * const response = await client.v1.invitations.accept({
-   *   token: 'token',
+   * await client.v1.invitations.accept({
+   *   token: 'ecc2efdd-ddfa-31a9-c6f1-b833d337aa7c',
    * });
    * ```
    */
-  accept(params: InvitationAcceptParams, options?: RequestOptions): APIPromise<InvitationAcceptResponse> {
+  accept(params: InvitationAcceptParams, options?: RequestOptions): APIPromise<void> {
     const { token } = params;
-    return this._client.post('/api/v1/invitations/accept', { query: { token }, ...options });
+    return this._client.post('/api/v1/invitations/accept', {
+      query: { token },
+      ...options,
+      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
+    });
   }
-}
-
-export interface InvitationAcceptResponse {
-  /**
-   * ID of the business the user has joined
-   */
-  businessId?: string;
-
-  /**
-   * Success message
-   */
-  message?: string;
-
-  /**
-   * Role assigned to the user in the business
-   */
-  role?: 'COLLABORATOR' | 'EMPLOYEE';
 }
 
 export interface InvitationAcceptParams {
@@ -46,8 +34,5 @@ export interface InvitationAcceptParams {
 }
 
 export declare namespace Invitations {
-  export {
-    type InvitationAcceptResponse as InvitationAcceptResponse,
-    type InvitationAcceptParams as InvitationAcceptParams,
-  };
+  export { type InvitationAcceptParams as InvitationAcceptParams };
 }

@@ -98,10 +98,6 @@ Methods:
 
 ## Invitations
 
-Types:
-
-- <code><a href="./src/resources/v1/invitations.ts">InvitationAcceptResponse</a></code>
-
 Methods:
 
-- <code title="post /api/v1/invitations/accept">client.v1.invitations.<a href="./src/resources/v1/invitations.ts">accept</a>({ ...params }) -> InvitationAcceptResponse</code>
+- <code title="post /api/v1/invitations/accept">client.v1.invitations.<a href="./src/resources/v1/invitations.ts">accept</a>({ ...params }) -> void</code>

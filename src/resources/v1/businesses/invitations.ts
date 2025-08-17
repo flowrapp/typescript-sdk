@@ -13,14 +13,14 @@ export class Invitations extends APIResource {
    * @example
    * ```ts
    * const invitationResponse =
-   *   await client.v1.businesses.invitations.create(
-   *     'businessId',
-   *     { email: 'invitee@example.com', role: 'COLLABORATOR' },
-   *   );
+   *   await client.v1.businesses.invitations.create(0, {
+   *     email: 'invitee@example.com',
+   *     role: 'MANAGER',
+   *   });
    * ```
    */
   create(
-    businessID: string,
+    businessID: number,
     body: InvitationCreateParams,
     options?: RequestOptions,
   ): APIPromise<InvitationResponse> {
@@ -33,11 +33,11 @@ export class Invitations extends APIResource {
    * @example
    * ```ts
    * const invitationResponses =
-   *   await client.v1.businesses.invitations.list('businessId');
+   *   await client.v1.businesses.invitations.list(0);
    * ```
    */
   list(
-    businessID: string,
+    businessID: number,
     query: InvitationListParams | null | undefined = {},
     options?: RequestOptions,
   ): APIPromise<InvitationListResponse> {
@@ -49,13 +49,12 @@ export class Invitations extends APIResource {
    *
    * @example
    * ```ts
-   * await client.v1.businesses.invitations.delete(
-   *   'invitationId',
-   *   { businessId: 'businessId' },
-   * );
+   * await client.v1.businesses.invitations.delete(0, {
+   *   businessId: 0,
+   * });
    * ```
    */
-  delete(invitationID: string, params: InvitationDeleteParams, options?: RequestOptions): APIPromise<void> {
+  delete(invitationID: number, params: InvitationDeleteParams, options?: RequestOptions): APIPromise<void> {
     const { businessId } = params;
     return this._client.delete(path`/api/v1/businesses/${businessId}/invitations/${invitationID}`, {
       ...options,
@@ -71,7 +70,7 @@ export interface InvitationResponse {
   /**
    * Unique identifier for the invitation
    */
-  id: string;
+  id: number;
 
   /**
    * Date and time when the invitation was created
@@ -91,7 +90,7 @@ export interface InvitationResponse {
   /**
    * Role assigned to the invitee
    */
-  role: 'COLLABORATOR' | 'EMPLOYEE';
+  role: 'OWNER' | 'MANAGER' | 'EMPLOYEE';
 
   /**
    * Status of the invitation
@@ -110,7 +109,7 @@ export interface InvitationCreateParams {
   /**
    * Role to assign to the invitee
    */
-  role: 'COLLABORATOR' | 'EMPLOYEE';
+  role: 'OWNER' | 'MANAGER' | 'EMPLOYEE';
 }
 
 export interface InvitationListParams {
@@ -124,7 +123,7 @@ export interface InvitationDeleteParams {
   /**
    * Unique identifier of the business
    */
-  businessId: string;
+  businessId: number;
 }
 
 export declare namespace Invitations {

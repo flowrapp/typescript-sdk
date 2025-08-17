@@ -11,7 +11,7 @@ const client = new Flowrapp({
 describe('resource invitations', () => {
   // Prism tests are disabled
   test.skip('accept: only required params', async () => {
-    const responsePromise = client.v1.invitations.accept({ token: 'token' });
+    const responsePromise = client.v1.invitations.accept({ token: 'ecc2efdd-ddfa-31a9-c6f1-b833d337aa7c' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -23,6 +23,6 @@ describe('resource invitations', () => {
 
   // Prism tests are disabled
   test.skip('accept: required and optional params', async () => {
-    const response = await client.v1.invitations.accept({ token: 'token' });
+    const response = await client.v1.invitations.accept({ token: 'ecc2efdd-ddfa-31a9-c6f1-b833d337aa7c' });
   });
 });
