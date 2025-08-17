@@ -2,6 +2,7 @@
 
 import { APIResource } from '../../core/resource';
 import { APIPromise } from '../../core/api-promise';
+import { buildHeaders } from '../../internal/headers';
 import { RequestOptions } from '../../internal/request-options';
 
 export class Users extends APIResource {
@@ -20,6 +21,24 @@ export class Users extends APIResource {
     options?: RequestOptions,
   ): APIPromise<UserCreateFromNameResponse> {
     return this._client.post('/api/v1/users', { body, ...options });
+  }
+
+  /**
+   * Updates the password for the authenticated user.
+   *
+   * @example
+   * ```ts
+   * await client.v1.users.updatePassword({
+   *   password: 'newSecurePassword123',
+   * });
+   * ```
+   */
+  updatePassword(body: UserUpdatePasswordParams, options?: RequestOptions): APIPromise<void> {
+    return this._client.put('/api/v1/users/password', {
+      body,
+      ...options,
+      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
+    });
   }
 }
 
@@ -45,9 +64,17 @@ export interface UserCreateFromNameParams {
   name: string;
 }
 
+export interface UserUpdatePasswordParams {
+  /**
+   * New password for the user
+   */
+  password: string;
+}
+
 export declare namespace Users {
   export {
     type UserCreateFromNameResponse as UserCreateFromNameResponse,
     type UserCreateFromNameParams as UserCreateFromNameParams,
+    type UserUpdatePasswordParams as UserUpdatePasswordParams,
   };
 }

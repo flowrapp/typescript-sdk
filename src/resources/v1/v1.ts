@@ -22,7 +22,12 @@ import {
   PushTokens,
 } from './push-tokens';
 import * as UsersAPI from './users';
-import { UserCreateFromNameParams, UserCreateFromNameResponse, Users } from './users';
+import {
+  UserCreateFromNameParams,
+  UserCreateFromNameResponse,
+  UserUpdatePasswordParams,
+  Users,
+} from './users';
 import * as BusinessesAPI from './businesses/businesses';
 import {
   BusinessListResponse,
@@ -75,6 +80,7 @@ export declare namespace V1 {
     Users as Users,
     type UserCreateFromNameResponse as UserCreateFromNameResponse,
     type UserCreateFromNameParams as UserCreateFromNameParams,
+    type UserUpdatePasswordParams as UserUpdatePasswordParams,
   };
 
   export {
