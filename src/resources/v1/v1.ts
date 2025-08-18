@@ -28,6 +28,8 @@ import {
   UserUpdatePasswordParams,
   Users,
 } from './users';
+import * as WorklogsAPI from './worklogs';
+import { WorklogListParams, WorklogListResponse, WorklogUpdateParams, Worklogs } from './worklogs';
 import * as BusinessesAPI from './businesses/businesses';
 import {
   BusinessListResponse,
@@ -46,6 +48,7 @@ export class V1 extends APIResource {
   admin: AdminAPI.Admin = new AdminAPI.Admin(this._client);
   businesses: BusinessesAPI.Businesses = new BusinessesAPI.Businesses(this._client);
   invitations: InvitationsAPI.Invitations = new InvitationsAPI.Invitations(this._client);
+  worklogs: WorklogsAPI.Worklogs = new WorklogsAPI.Worklogs(this._client);
 
   /**
    * Simple endpoint to verify that the API is up and running
@@ -72,6 +75,7 @@ V1.Auth = Auth;
 V1.Admin = Admin;
 V1.Businesses = Businesses;
 V1.Invitations = Invitations;
+V1.Worklogs = Worklogs;
 
 export declare namespace V1 {
   export { type V1PingResponse as V1PingResponse };
@@ -114,5 +118,12 @@ export declare namespace V1 {
     type InvitationListParams as InvitationListParams,
     type InvitationAcceptParams as InvitationAcceptParams,
     type InvitationRegisterParams as InvitationRegisterParams,
+  };
+
+  export {
+    Worklogs as Worklogs,
+    type WorklogListResponse as WorklogListResponse,
+    type WorklogUpdateParams as WorklogUpdateParams,
+    type WorklogListParams as WorklogListParams,
   };
 }
