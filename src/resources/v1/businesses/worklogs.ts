@@ -41,24 +41,6 @@ export class Worklogs extends APIResource {
   ): APIPromise<WorkLogResponse> {
     return this._client.post(path`/api/v1/businesses/${businessID}/worklogs/clock-in`, { body, ...options });
   }
-
-  /**
-   * Finalizes an active work session by recording the end time for the authenticated
-   * user at a specific business location.
-   *
-   * @example
-   * ```ts
-   * const workLogResponse =
-   *   await client.v1.businesses.worklogs.clockOut(0);
-   * ```
-   */
-  clockOut(
-    businessID: number,
-    body: WorklogClockOutParams | null | undefined = {},
-    options?: RequestOptions,
-  ): APIPromise<WorkLogResponse> {
-    return this._client.put(path`/api/v1/businesses/${businessID}/worklogs/clock-out`, { body, ...options });
-  }
 }
 
 /**
@@ -117,19 +99,11 @@ export interface WorklogClockInParams {
   clockIn?: string;
 }
 
-export interface WorklogClockOutParams {
-  /**
-   * Timestamp for clock-out (optional, server uses current time if omitted)
-   */
-  clockOut?: string;
-}
-
 export declare namespace Worklogs {
   export {
     type WorkLogResponse as WorkLogResponse,
     type WorklogListResponse as WorklogListResponse,
     type WorklogListParams as WorklogListParams,
     type WorklogClockInParams as WorklogClockInParams,
-    type WorklogClockOutParams as WorklogClockOutParams,
   };
 }
