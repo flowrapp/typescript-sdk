@@ -72,7 +72,6 @@ Methods:
 
 - <code title="get /api/v1/businesses/{businessId}/worklogs">client.v1.businesses.worklogs.<a href="./src/resources/v1/businesses/worklogs.ts">list</a>(businessID, { ...params }) -> WorklogListResponse</code>
 - <code title="post /api/v1/businesses/{businessId}/worklogs/clock-in">client.v1.businesses.worklogs.<a href="./src/resources/v1/businesses/worklogs.ts">clockIn</a>(businessID, { ...params }) -> WorkLogResponse</code>
-- <code title="put /api/v1/businesses/{businessId}/worklogs/clock-out">client.v1.businesses.worklogs.<a href="./src/resources/v1/businesses/worklogs.ts">clockOut</a>(businessID, { ...params }) -> WorkLogResponse</code>
 
 ### Invitations
 
