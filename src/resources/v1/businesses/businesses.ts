@@ -21,6 +21,7 @@ import * as WorklogsAPI from './worklogs';
 import {
   WorkLogResponse,
   WorklogClockInParams,
+  WorklogClockOutParams,
   WorklogListParams,
   WorklogListResponse,
   Worklogs,
@@ -203,6 +204,7 @@ export declare namespace Businesses {
     type WorklogListResponse as WorklogListResponse,
     type WorklogListParams as WorklogListParams,
     type WorklogClockInParams as WorklogClockInParams,
+    type WorklogClockOutParams as WorklogClockOutParams,
   };
 
   export {

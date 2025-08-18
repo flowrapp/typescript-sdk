@@ -26,4 +26,5 @@ export {
   type WorklogListResponse,
   type WorklogListParams,
   type WorklogClockInParams,
+  type WorklogClockOutParams,
 } from './worklogs';

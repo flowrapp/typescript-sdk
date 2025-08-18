@@ -30,3 +30,9 @@ export {
   type UserUpdatePasswordParams,
 } from './users';
 export { V1, type V1PingResponse } from './v1';
+export {
+  Worklogs,
+  type WorklogListResponse,
+  type WorklogUpdateParams,
+  type WorklogListParams,
+} from './worklogs';
