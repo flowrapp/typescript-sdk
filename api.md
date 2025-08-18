@@ -72,6 +72,7 @@ Methods:
 
 - <code title="get /api/v1/businesses/{businessId}/worklogs">client.v1.businesses.worklogs.<a href="./src/resources/v1/businesses/worklogs.ts">list</a>(businessID, { ...params }) -> WorklogListResponse</code>
 - <code title="post /api/v1/businesses/{businessId}/worklogs/clock-in">client.v1.businesses.worklogs.<a href="./src/resources/v1/businesses/worklogs.ts">clockIn</a>(businessID, { ...params }) -> WorkLogResponse</code>
+- <code title="put /api/v1/businesses/{businessId}/worklogs/{worklogId}/clock-out">client.v1.businesses.worklogs.<a href="./src/resources/v1/businesses/worklogs.ts">clockOut</a>(worklogID, { ...params }) -> WorkLogResponse</code>
 
 ### Invitations
 
@@ -107,3 +108,15 @@ Methods:
 - <code title="get /api/v1/invitations">client.v1.invitations.<a href="./src/resources/v1/invitations.ts">list</a>({ ...params }) -> InvitationListResponse</code>
 - <code title="post /api/v1/invitations/accept">client.v1.invitations.<a href="./src/resources/v1/invitations.ts">accept</a>({ ...params }) -> void</code>
 - <code title="post /api/v1/invitations/register">client.v1.invitations.<a href="./src/resources/v1/invitations.ts">register</a>({ ...params }) -> void</code>
+
+## Worklogs
+
+Types:
+
+- <code><a href="./src/resources/v1/worklogs.ts">WorklogListResponse</a></code>
+
+Methods:
+
+- <code title="get /api/v1/worklogs/{worklogId}">client.v1.worklogs.<a href="./src/resources/v1/worklogs.ts">retrieve</a>(worklogID) -> WorkLogResponse</code>
+- <code title="put /api/v1/worklogs/{worklogId}">client.v1.worklogs.<a href="./src/resources/v1/worklogs.ts">update</a>(worklogID, { ...params }) -> WorkLogResponse</code>
+- <code title="get /api/v1/worklogs">client.v1.worklogs.<a href="./src/resources/v1/worklogs.ts">list</a>({ ...params }) -> WorklogListResponse</code>
