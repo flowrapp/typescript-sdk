@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.0-alpha.10 (2025-08-20)
+
+Full Changelog: [v0.1.0-alpha.9...v0.1.0-alpha.10](https://github.com/flowrapp/typescript-sdk/compare/v0.1.0-alpha.9...v0.1.0-alpha.10)
+
+### Features
+
+* **api:** api update ([87244a1](https://github.com/flowrapp/typescript-sdk/commit/87244a1899c9fa971560fe518a1c9bc694db622d))
+* **mcp:** add code execution tool ([6610836](https://github.com/flowrapp/typescript-sdk/commit/661083695bb56b5144071feef2c43a832b3b4a73))
+
 ## 0.1.0-alpha.9 (2025-08-18)
 
 Full Changelog: [v0.1.0-alpha.8...v0.1.0-alpha.9](https://github.com/flowrapp/typescript-sdk/compare/v0.1.0-alpha.8...v0.1.0-alpha.9)
