@@ -55,13 +55,11 @@ export class Businesses extends APIResource {
    *
    * @example
    * ```ts
-   * const response = await client.v1.businesses.listUsers(
-   *   'businessId',
-   * );
+   * const response = await client.v1.businesses.listUsers(0);
    * ```
    */
   listUsers(
-    businessID: string,
+    businessID: number,
     query: BusinessListUsersParams | null | undefined = {},
     options?: RequestOptions,
   ): APIPromise<BusinessListUsersResponse> {
@@ -114,53 +112,31 @@ export namespace BusinessListResponse {
     /**
      * Role of the current authenticated user in the business
      */
-    userRole: 'OWNER' | 'COLLABORATOR' | 'EMPLOYEE';
+    userRole: 'OWNER' | 'MANAGER' | 'EMPLOYEE';
+
+    /**
+     * IANA time zone identifier for the business (e.g., America/Caracas)
+     */
+    zone: string;
   }
 }
 
-export interface BusinessListUsersResponse {
-  content: Array<BusinessListUsersResponse.Content>;
-
-  /**
-   * Current page number (0-based)
-   */
-  page: number;
-
-  /**
-   * Size of the page
-   */
-  size: number;
-
-  /**
-   * Total number of elements across all pages
-   */
-  totalElements: number;
-
-  /**
-   * Total number of pages
-   */
-  totalPages: number;
-}
+export type BusinessListUsersResponse = Array<BusinessListUsersResponse.BusinessListUsersResponseItem>;
 
 export namespace BusinessListUsersResponse {
   /**
    * User information associated with a business
    */
-  export interface Content {
-    /**
-     * Email address of the user
-     */
-    email: string;
-
+  export interface BusinessListUsersResponseItem {
     /**
      * Role of the user in the business
      */
-    role: 'OWNER' | 'COLLABORATOR' | 'EMPLOYEE';
+    role: 'OWNER' | 'MANAGER' | 'EMPLOYEE';
 
     /**
      * Unique identifier for the user
      */
-    userId: string;
+    userId: number;
 
     /**
      * Username of the user
@@ -171,19 +147,9 @@ export namespace BusinessListUsersResponse {
 
 export interface BusinessListUsersParams {
   /**
-   * Page number (0-based)
-   */
-  page?: number;
-
-  /**
    * Filter users by role
    */
-  role?: 'OWNER' | 'COLLABORATOR' | 'EMPLOYEE';
-
-  /**
-   * Page size
-   */
-  size?: number;
+  role?: 'OWNER' | 'MANAGER' | 'EMPLOYEE';
 }
 
 Businesses.Worklogs = Worklogs;
