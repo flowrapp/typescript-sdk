@@ -21,6 +21,12 @@ import {
   PushTokenRegisterResponse,
   PushTokens,
 } from './push-tokens';
+import * as TimesheetsAPI from './timesheets';
+import {
+  TimesheetRetrieveWeeklyHoursParams,
+  TimesheetRetrieveWeeklyHoursResponse,
+  Timesheets,
+} from './timesheets';
 import * as UsersAPI from './users';
 import {
   UserCreateFromNameParams,
@@ -49,6 +55,7 @@ export class V1 extends APIResource {
   businesses: BusinessesAPI.Businesses = new BusinessesAPI.Businesses(this._client);
   invitations: InvitationsAPI.Invitations = new InvitationsAPI.Invitations(this._client);
   worklogs: WorklogsAPI.Worklogs = new WorklogsAPI.Worklogs(this._client);
+  timesheets: TimesheetsAPI.Timesheets = new TimesheetsAPI.Timesheets(this._client);
 
   /**
    * Simple endpoint to verify that the API is up and running
@@ -76,6 +83,7 @@ V1.Admin = Admin;
 V1.Businesses = Businesses;
 V1.Invitations = Invitations;
 V1.Worklogs = Worklogs;
+V1.Timesheets = Timesheets;
 
 export declare namespace V1 {
   export { type V1PingResponse as V1PingResponse };
@@ -125,5 +133,11 @@ export declare namespace V1 {
     type WorklogListResponse as WorklogListResponse,
     type WorklogUpdateParams as WorklogUpdateParams,
     type WorklogListParams as WorklogListParams,
+  };
+
+  export {
+    Timesheets as Timesheets,
+    type TimesheetRetrieveWeeklyHoursResponse as TimesheetRetrieveWeeklyHoursResponse,
+    type TimesheetRetrieveWeeklyHoursParams as TimesheetRetrieveWeeklyHoursParams,
   };
 }
