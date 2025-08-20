@@ -16,12 +16,12 @@ describe('resource admin', () => {
         {
           location: { area: 5.3, latitude: 30.5, longitude: 50.5 },
           name: 'Business 1',
-          timezoneOffset: 'America/Caracas',
+          zone: 'America/Caracas',
         },
         {
           location: { area: 3.9, latitude: 35.2, longitude: 45.7 },
           name: 'Business 2',
-          timezoneOffset: 'America/Caracas',
+          zone: 'Europe/Madrid',
         },
       ],
       mail: 'mail',
@@ -43,12 +43,12 @@ describe('resource admin', () => {
         {
           location: { area: 5.3, latitude: 30.5, longitude: 50.5 },
           name: 'Business 1',
-          timezoneOffset: 'America/Caracas',
+          zone: 'America/Caracas',
         },
         {
           location: { area: 3.9, latitude: 35.2, longitude: 45.7 },
           name: 'Business 2',
-          timezoneOffset: 'America/Caracas',
+          zone: 'Europe/Madrid',
         },
       ],
       mail: 'mail',
