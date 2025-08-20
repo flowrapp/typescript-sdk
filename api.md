@@ -120,3 +120,13 @@ Methods:
 - <code title="get /api/v1/worklogs/{worklogId}">client.v1.worklogs.<a href="./src/resources/v1/worklogs.ts">retrieve</a>(worklogID) -> WorkLogResponse</code>
 - <code title="put /api/v1/worklogs/{worklogId}">client.v1.worklogs.<a href="./src/resources/v1/worklogs.ts">update</a>(worklogID, { ...params }) -> WorkLogResponse</code>
 - <code title="get /api/v1/worklogs">client.v1.worklogs.<a href="./src/resources/v1/worklogs.ts">list</a>({ ...params }) -> WorklogListResponse</code>
+
+## Timesheets
+
+Types:
+
+- <code><a href="./src/resources/v1/timesheets.ts">TimesheetRetrieveWeeklyHoursResponse</a></code>
+
+Methods:
+
+- <code title="get /api/v1/timesheets/weekly-hours">client.v1.timesheets.<a href="./src/resources/v1/timesheets.ts">retrieveWeeklyHours</a>({ ...params }) -> TimesheetRetrieveWeeklyHoursResponse</code>
