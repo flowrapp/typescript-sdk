@@ -23,7 +23,7 @@ describe('resource businesses', () => {
 
   // Prism tests are disabled
   test.skip('listUsers', async () => {
-    const responsePromise = client.v1.businesses.listUsers('businessId');
+    const responsePromise = client.v1.businesses.listUsers(0);
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -37,11 +37,7 @@ describe('resource businesses', () => {
   test.skip('listUsers: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      client.v1.businesses.listUsers(
-        'businessId',
-        { page: 0, role: 'OWNER', size: 20 },
-        { path: '/_stainless_unknown_path' },
-      ),
+      client.v1.businesses.listUsers(0, { role: 'OWNER' }, { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Flowrapp.NotFoundError);
   });
 });
