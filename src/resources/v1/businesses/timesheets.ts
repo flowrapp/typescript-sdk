@@ -14,13 +14,13 @@ export class Timesheets extends APIResource {
    * ```ts
    * const response =
    *   await client.v1.businesses.timesheets.retrieveWeeklyHours(
-   *     'abc123',
+   *     123,
    *     { week: '2025-W31' },
    *   );
    * ```
    */
   retrieveWeeklyHours(
-    businessID: string,
+    businessID: number,
     query: TimesheetRetrieveWeeklyHoursParams,
     options?: RequestOptions,
   ): APIPromise<TimesheetRetrieveWeeklyHoursResponse> {
@@ -38,7 +38,7 @@ export interface TimesheetRetrieveWeeklyHoursResponse {
   /**
    * ID of the business
    */
-  businessId: string;
+  businessId: number;
 
   /**
    * End date of the week
@@ -72,11 +72,6 @@ export namespace TimesheetRetrieveWeeklyHoursResponse {
     dailyHours: { [key: string]: number };
 
     /**
-     * Email of the user
-     */
-    email: string;
-
-    /**
      * Total hours worked in the week
      */
     totalHours: number;
@@ -84,7 +79,7 @@ export namespace TimesheetRetrieveWeeklyHoursResponse {
     /**
      * ID of the user
      */
-    userId: string;
+    userId: number;
 
     /**
      * Username of the user
@@ -102,7 +97,7 @@ export interface TimesheetRetrieveWeeklyHoursParams {
   /**
    * ID of the user to filter by
    */
-  userId?: string;
+  userId?: number;
 }
 
 export declare namespace Timesheets {

@@ -51,7 +51,7 @@ describe('resource worklogs', () => {
     await expect(
       client.v1.businesses.worklogs.clockIn(
         0,
-        { clockIn: '2019-12-27T18:11:19.117Z' },
+        { clockIn: '2025-07-29T08:30:00+00:00' },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Flowrapp.NotFoundError);
@@ -73,7 +73,7 @@ describe('resource worklogs', () => {
   test.skip('clockOut: required and optional params', async () => {
     const response = await client.v1.businesses.worklogs.clockOut(0, {
       businessId: 0,
-      clockOut: '2019-12-27T18:11:19.117Z',
+      clockOut: '2025-07-29T17:30:00+00:00',
     });
   });
 });

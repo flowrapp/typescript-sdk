@@ -22,6 +22,7 @@ export class Admin extends APIResource {
    *         longitude: 50.5,
    *       },
    *       name: 'Business 1',
+   *       timezoneOffset: 'America/Caracas',
    *     },
    *     {
    *       location: {
@@ -30,6 +31,7 @@ export class Admin extends APIResource {
    *         longitude: 45.7,
    *       },
    *       name: 'Business 2',
+   *       timezoneOffset: 'America/Caracas',
    *     },
    *   ],
    *   mail: 'mail',
@@ -77,6 +79,11 @@ export namespace AdminRegisterUserParams {
      * Name of the business
      */
     name: string;
+
+    /**
+     * IANA time zone identifier for the business (e.g., America/Caracas)
+     */
+    timezoneOffset: string;
   }
 }
 
