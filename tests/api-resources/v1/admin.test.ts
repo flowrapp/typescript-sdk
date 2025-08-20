@@ -13,8 +13,16 @@ describe('resource admin', () => {
   test.skip('registerUser: only required params', async () => {
     const responsePromise = client.v1.admin.registerUser({
       business: [
-        { location: { area: 5.3, latitude: 30.5, longitude: 50.5 }, name: 'Business 1' },
-        { location: { area: 3.9, latitude: 35.2, longitude: 45.7 }, name: 'Business 2' },
+        {
+          location: { area: 5.3, latitude: 30.5, longitude: 50.5 },
+          name: 'Business 1',
+          timezoneOffset: 'America/Caracas',
+        },
+        {
+          location: { area: 3.9, latitude: 35.2, longitude: 45.7 },
+          name: 'Business 2',
+          timezoneOffset: 'America/Caracas',
+        },
       ],
       mail: 'mail',
       username: 'username',
@@ -32,8 +40,16 @@ describe('resource admin', () => {
   test.skip('registerUser: required and optional params', async () => {
     const response = await client.v1.admin.registerUser({
       business: [
-        { location: { area: 5.3, latitude: 30.5, longitude: 50.5 }, name: 'Business 1' },
-        { location: { area: 3.9, latitude: 35.2, longitude: 45.7 }, name: 'Business 2' },
+        {
+          location: { area: 5.3, latitude: 30.5, longitude: 50.5 },
+          name: 'Business 1',
+          timezoneOffset: 'America/Caracas',
+        },
+        {
+          location: { area: 3.9, latitude: 35.2, longitude: 45.7 },
+          name: 'Business 2',
+          timezoneOffset: 'America/Caracas',
+        },
       ],
       mail: 'mail',
       username: 'username',
