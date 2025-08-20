@@ -24,6 +24,11 @@ export {
   type PushTokenRegisterParams,
 } from './push-tokens';
 export {
+  Timesheets,
+  type TimesheetRetrieveWeeklyHoursResponse,
+  type TimesheetRetrieveWeeklyHoursParams,
+} from './timesheets';
+export {
   Users,
   type UserCreateFromNameResponse,
   type UserCreateFromNameParams,
