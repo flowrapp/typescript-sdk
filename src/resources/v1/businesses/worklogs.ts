@@ -96,17 +96,18 @@ export type WorklogListResponse = Array<WorkLogResponse>;
 
 export interface WorklogListParams {
   /**
-   * Specific date for filtering (alternative to from/to, format YYYY-MM-DD)
+   * Specific date for filtering (alternative to from/to, format YYYY-MM-DD). UTC
+   * timezone is used.
    */
   date?: string;
 
   /**
-   * Start date for filtering (format YYYY-MM-DD)
+   * Start date for filtering (format YYYY-MM-DD). UTC timezone is used.
    */
   from?: string;
 
   /**
-   * End date for filtering (format YYYY-MM-DD)
+   * End date for filtering (format YYYY-MM-DD). UTC timezone is used.
    */
   to?: string;
 
