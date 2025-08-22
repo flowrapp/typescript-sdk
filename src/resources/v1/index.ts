@@ -1,7 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 export { Admin, type AdminRegisterUserParams } from './admin';
-export { Auth, type TokenResponse, type AuthLoginParams, type AuthRefreshTokenParams } from './auth';
+export { Auth, type TokenResponse, type AuthLoginParams, type AuthRefreshTokenParams } from './auth/index';
 export {
   Businesses,
   type Location,

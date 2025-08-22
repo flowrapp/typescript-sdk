@@ -1,4 +1,4 @@
-configured_endpoints: 24
+configured_endpoints: 26
 openapi_spec_url: https://storage.googleapis.com/stainless-sdk-openapi-specs/flowrapp%2Fflowrapp-028baed6c3e3c99d70714490dcdb547fa0ce8ef3492d90d457451cd9f342ade9.yml
 openapi_spec_hash: 6a9d106687bf07116df785a45566f851
-config_hash: 6828ac7b64ccdff485e5c9c6f685f607
+config_hash: 6f9f6230e40076a16b8ec2653bd9b943
