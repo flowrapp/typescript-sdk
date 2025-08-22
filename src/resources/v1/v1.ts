@@ -3,8 +3,6 @@
 import { APIResource } from '../../core/resource';
 import * as AdminAPI from './admin';
 import { Admin, AdminRegisterUserParams } from './admin';
-import * as AuthAPI from './auth';
-import { Auth, AuthLoginParams, AuthRefreshTokenParams, TokenResponse } from './auth';
 import * as InvitationsAPI from './invitations';
 import {
   InvitationAcceptParams,
@@ -36,6 +34,8 @@ import {
 } from './users';
 import * as WorklogsAPI from './worklogs';
 import { WorklogListParams, WorklogListResponse, WorklogUpdateParams, Worklogs } from './worklogs';
+import * as AuthAPI from './auth/auth';
+import { Auth, AuthLoginParams, AuthRefreshTokenParams, TokenResponse } from './auth/auth';
 import * as BusinessesAPI from './businesses/businesses';
 import {
   BusinessListResponse,
