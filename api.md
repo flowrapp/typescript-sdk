@@ -35,12 +35,19 @@ Methods:
 
 Types:
 
-- <code><a href="./src/resources/v1/auth.ts">TokenResponse</a></code>
+- <code><a href="./src/resources/v1/auth/auth.ts">TokenResponse</a></code>
 
 Methods:
 
-- <code title="post /api/v1/auth/login">client.v1.auth.<a href="./src/resources/v1/auth.ts">login</a>({ ...params }) -> TokenResponse</code>
-- <code title="post /api/v1/auth/token-refresh">client.v1.auth.<a href="./src/resources/v1/auth.ts">refreshToken</a>({ ...params }) -> TokenResponse</code>
+- <code title="post /api/v1/auth/login">client.v1.auth.<a href="./src/resources/v1/auth/auth.ts">login</a>({ ...params }) -> TokenResponse</code>
+- <code title="post /api/v1/auth/token-refresh">client.v1.auth.<a href="./src/resources/v1/auth/auth.ts">refreshToken</a>({ ...params }) -> TokenResponse</code>
+
+### OAuth
+
+Methods:
+
+- <code title="post /api/v1/auth/oauth/github">client.v1.auth.oauth.<a href="./src/resources/v1/auth/oauth.ts">authenticateWithGitHub</a>({ ...params }) -> TokenResponse</code>
+- <code title="post /api/v1/auth/oauth/google">client.v1.auth.oauth.<a href="./src/resources/v1/auth/oauth.ts">authenticateWithGoogle</a>({ ...params }) -> TokenResponse</code>
 
 ## Admin
 
