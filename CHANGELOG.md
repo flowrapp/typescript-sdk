@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.1.0-alpha.13 (2025-08-22)
+
+Full Changelog: [v0.1.0-alpha.12...v0.1.0-alpha.13](https://github.com/flowrapp/typescript-sdk/compare/v0.1.0-alpha.12...v0.1.0-alpha.13)
+
+### Features
+
+* **api:** update via SDK Studio ([b3962d4](https://github.com/flowrapp/typescript-sdk/commit/b3962d4673fdc829aef947c5c3d503f50218c327))
+
+
+### Chores
+
+* add package to package.json ([27bd96e](https://github.com/flowrapp/typescript-sdk/commit/27bd96eca71bc1a6c81042f077eed47cece42e5f))
+* **client:** qualify global Blob ([5c6aee7](https://github.com/flowrapp/typescript-sdk/commit/5c6aee754b766718ffababa0c08cc132b62e9297))
+
 ## 0.1.0-alpha.12 (2025-08-20)
 
 Full Changelog: [v0.1.0-alpha.11...v0.1.0-alpha.12](https://github.com/flowrapp/typescript-sdk/compare/v0.1.0-alpha.11...v0.1.0-alpha.12)
