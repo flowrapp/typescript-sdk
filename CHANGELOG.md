@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.14 (2025-08-23)
+
+Full Changelog: [v0.1.0-alpha.13...v0.1.0-alpha.14](https://github.com/flowrapp/typescript-sdk/compare/v0.1.0-alpha.13...v0.1.0-alpha.14)
+
+### Chores
+
+* update CI script ([6f4f4a7](https://github.com/flowrapp/typescript-sdk/commit/6f4f4a7d71155b3e4ea4b9711f91f328e3e14c80))
+
 ## 0.1.0-alpha.13 (2025-08-22)
 
 Full Changelog: [v0.1.0-alpha.12...v0.1.0-alpha.13](https://github.com/flowrapp/typescript-sdk/compare/v0.1.0-alpha.12...v0.1.0-alpha.13)
