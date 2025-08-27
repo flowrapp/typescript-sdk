@@ -16,13 +16,7 @@ export {
   type InvitationAcceptParams,
   type InvitationRegisterParams,
 } from './invitations';
-export {
-  PushTokens,
-  type PushTokenDeleteResponse,
-  type PushTokenRegisterResponse,
-  type PushTokenDeleteParams,
-  type PushTokenRegisterParams,
-} from './push-tokens';
+export { PushTokens, type PushTokenRegisterParams } from './push-tokens';
 export {
   Timesheets,
   type TimesheetRetrieveWeeklyHoursResponse,
