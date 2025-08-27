@@ -4,8 +4,24 @@ import { APIResource } from '../../core/resource';
 import { APIPromise } from '../../core/api-promise';
 import { buildHeaders } from '../../internal/headers';
 import { RequestOptions } from '../../internal/request-options';
+import { path } from '../../internal/utils/path';
 
 export class PushTokens extends APIResource {
+  /**
+   * Deletes a device push notification token for the authenticated user
+   *
+   * @example
+   * ```ts
+   * await client.v1.pushTokens.delete('deviceId');
+   * ```
+   */
+  delete(deviceID: string, options?: RequestOptions): APIPromise<void> {
+    return this._client.delete(path`/api/v1/push-tokens/${deviceID}`, {
+      ...options,
+      headers: buildHeaders([{ Accept: '*/*' }, options?.headers]),
+    });
+  }
+
   /**
    * Registers a device push notification token for the authenticated user
    *
