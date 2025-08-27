@@ -12,13 +12,7 @@ import {
   Invitations,
 } from './invitations';
 import * as PushTokensAPI from './push-tokens';
-import {
-  PushTokenDeleteParams,
-  PushTokenDeleteResponse,
-  PushTokenRegisterParams,
-  PushTokenRegisterResponse,
-  PushTokens,
-} from './push-tokens';
+import { PushTokenRegisterParams, PushTokens } from './push-tokens';
 import * as TimesheetsAPI from './timesheets';
 import {
   TimesheetRetrieveWeeklyHoursParams,
@@ -95,13 +89,7 @@ export declare namespace V1 {
     type UserUpdatePasswordParams as UserUpdatePasswordParams,
   };
 
-  export {
-    PushTokens as PushTokens,
-    type PushTokenDeleteResponse as PushTokenDeleteResponse,
-    type PushTokenRegisterResponse as PushTokenRegisterResponse,
-    type PushTokenDeleteParams as PushTokenDeleteParams,
-    type PushTokenRegisterParams as PushTokenRegisterParams,
-  };
+  export { PushTokens as PushTokens, type PushTokenRegisterParams as PushTokenRegisterParams };
 
   export {
     Auth as Auth,

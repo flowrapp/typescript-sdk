@@ -21,15 +21,9 @@ Methods:
 
 ## PushTokens
 
-Types:
-
-- <code><a href="./src/resources/v1/push-tokens.ts">PushTokenDeleteResponse</a></code>
-- <code><a href="./src/resources/v1/push-tokens.ts">PushTokenRegisterResponse</a></code>
-
 Methods:
 
-- <code title="delete /api/v1/push-tokens">client.v1.pushTokens.<a href="./src/resources/v1/push-tokens.ts">delete</a>({ ...params }) -> PushTokenDeleteResponse</code>
-- <code title="post /api/v1/push-tokens">client.v1.pushTokens.<a href="./src/resources/v1/push-tokens.ts">register</a>({ ...params }) -> PushTokenRegisterResponse</code>
+- <code title="post /api/v1/push-tokens">client.v1.pushTokens.<a href="./src/resources/v1/push-tokens.ts">register</a>({ ...params }) -> void</code>
 
 ## Auth
 
