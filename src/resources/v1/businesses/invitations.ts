@@ -109,7 +109,7 @@ export interface InvitationCreateParams {
   /**
    * Role to assign to the invitee
    */
-  role: 'OWNER' | 'MANAGER' | 'EMPLOYEE';
+  role: 'MANAGER' | 'EMPLOYEE';
 }
 
 export interface InvitationListParams {
