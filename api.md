@@ -23,6 +23,7 @@ Methods:
 
 Methods:
 
+- <code title="delete /api/v1/push-tokens/{deviceId}">client.v1.pushTokens.<a href="./src/resources/v1/push-tokens.ts">delete</a>(deviceID) -> void</code>
 - <code title="post /api/v1/push-tokens">client.v1.pushTokens.<a href="./src/resources/v1/push-tokens.ts">register</a>({ ...params }) -> void</code>
 
 ## Auth
