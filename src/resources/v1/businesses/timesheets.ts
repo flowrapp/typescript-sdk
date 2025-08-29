@@ -69,12 +69,12 @@ export namespace TimesheetRetrieveWeeklyHoursResponse {
     /**
      * Hours worked per day
      */
-    dailyHours: { [key: string]: number };
+    dailyHours: { [key: string]: string };
 
     /**
      * Total hours worked in the week
      */
-    totalHours: number;
+    totalHours: string;
 
     /**
      * ID of the user
