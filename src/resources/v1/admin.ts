@@ -16,21 +16,21 @@ export class Admin extends APIResource {
    * await client.v1.admin.registerUser({
    *   business: [
    *     {
-   *       location: {
-   *         area: 5.3,
-   *         latitude: 30.5,
-   *         longitude: 50.5,
-   *       },
+   *       address: 'C/ sin nombre 43',
+   *       city: 'Cádiz',
+   *       country: 'España',
+   *       location: { ... },
    *       name: 'Business 1',
+   *       town: 'Barbate',
    *       zone: 'America/Caracas',
    *     },
    *     {
-   *       location: {
-   *         area: 3.9,
-   *         latitude: 35.2,
-   *         longitude: 45.7,
-   *       },
+   *       address: 'C/ sin nombre 43',
+   *       city: 'Cádiz',
+   *       country: 'España',
+   *       location: { ... },
    *       name: 'Business 2',
+   *       town: 'Barbate',
    *       zone: 'Europe/Madrid',
    *     },
    *   ],
@@ -71,6 +71,21 @@ export namespace AdminRegisterUserParams {
    */
   export interface Business {
     /**
+     * Address of the business
+     */
+    address: string;
+
+    /**
+     * City of the business
+     */
+    city: string;
+
+    /**
+     * Country of the business
+     */
+    country: string;
+
+    /**
      * Geographic location information
      */
     location: BusinessesAPI.Location;
@@ -79,6 +94,11 @@ export namespace AdminRegisterUserParams {
      * Name of the business
      */
     name: string;
+
+    /**
+     * Town of the business
+     */
+    town: string;
 
     /**
      * IANA time zone identifier for the business (e.g., America/Caracas)

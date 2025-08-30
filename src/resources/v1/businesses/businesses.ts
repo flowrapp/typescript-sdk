@@ -100,6 +100,21 @@ export namespace BusinessListResponse {
     id: number;
 
     /**
+     * Address of the business
+     */
+    address: string;
+
+    /**
+     * City of the business
+     */
+    city: string;
+
+    /**
+     * Country of the business
+     */
+    country: string;
+
+    /**
      * Geographic location information
      */
     location: BusinessesAPI.Location;
@@ -108,6 +123,11 @@ export namespace BusinessListResponse {
      * Name of the business
      */
     name: string;
+
+    /**
+     * Town of the business
+     */
+    town: string;
 
     /**
      * Role of the current authenticated user in the business
