@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.1.0-alpha.17 (2025-09-09)
+
+Full Changelog: [v0.1.0-alpha.16...v0.1.0-alpha.17](https://github.com/flowrapp/typescript-sdk/compare/v0.1.0-alpha.16...v0.1.0-alpha.17)
+
+### Bug Fixes
+
+* coerce nullable values to undefined ([c07a907](https://github.com/flowrapp/typescript-sdk/commit/c07a907ed342857ce19a46cf2cfe2efd75efa221))
+
+
+### Chores
+
+* ci build action ([38b2ab5](https://github.com/flowrapp/typescript-sdk/commit/38b2ab52b5815fb830e998be70b8acc3eed0ff08))
+
 ## 0.1.0-alpha.16 (2025-08-30)
 
 Full Changelog: [v0.1.0-alpha.15...v0.1.0-alpha.16](https://github.com/flowrapp/typescript-sdk/compare/v0.1.0-alpha.15...v0.1.0-alpha.16)
