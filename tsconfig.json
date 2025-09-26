@@ -7,10 +7,9 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "esModuleInterop": true,
-    "baseUrl": "./",
     "paths": {
-      "flowrapp-sdk/*": ["src/*"],
-      "flowrapp-sdk": ["src/index.ts"]
+      "flowrapp-sdk/*": ["./src/*"],
+      "flowrapp-sdk": ["./src/index.ts"]
     },
     "noEmit": true,
 
