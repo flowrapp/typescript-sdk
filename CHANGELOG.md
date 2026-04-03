@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.22 (2026-04-03)
+
+Full Changelog: [v0.1.0-alpha.21...v0.1.0-alpha.22](https://github.com/flowrapp/typescript-sdk/compare/v0.1.0-alpha.21...v0.1.0-alpha.22)
+
+### Chores
+
+* update SDK settings ([2d9f0f6](https://github.com/flowrapp/typescript-sdk/commit/2d9f0f6b109030369e894c2ab9aff987521c08d2))
+
 ## 0.1.0-alpha.21 (2026-04-03)
 
 Full Changelog: [v0.1.0-alpha.20...v0.1.0-alpha.21](https://github.com/flowrapp/typescript-sdk/compare/v0.1.0-alpha.20...v0.1.0-alpha.21)
