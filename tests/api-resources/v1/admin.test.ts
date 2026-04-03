@@ -9,7 +9,7 @@ const client = new Flowrapp({
 });
 
 describe('resource admin', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('registerUser: only required params', async () => {
     const responsePromise = client.v1.admin.registerUser({
       business: [
@@ -17,7 +17,11 @@ describe('resource admin', () => {
           address: 'C/ sin nombre 43',
           city: 'Cádiz',
           country: 'España',
-          location: { area: 5.3, latitude: 30.5, longitude: 50.5 },
+          location: {
+            area: 5.3,
+            latitude: 30.5,
+            longitude: 50.5,
+          },
           name: 'Business 1',
           town: 'Barbate',
           zone: 'America/Caracas',
@@ -26,7 +30,11 @@ describe('resource admin', () => {
           address: 'C/ sin nombre 43',
           city: 'Cádiz',
           country: 'España',
-          location: { area: 3.9, latitude: 35.2, longitude: 45.7 },
+          location: {
+            area: 3.9,
+            latitude: 35.2,
+            longitude: 45.7,
+          },
           name: 'Business 2',
           town: 'Barbate',
           zone: 'Europe/Madrid',
@@ -44,7 +52,7 @@ describe('resource admin', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('registerUser: required and optional params', async () => {
     const response = await client.v1.admin.registerUser({
       business: [
@@ -52,7 +60,11 @@ describe('resource admin', () => {
           address: 'C/ sin nombre 43',
           city: 'Cádiz',
           country: 'España',
-          location: { area: 5.3, latitude: 30.5, longitude: 50.5 },
+          location: {
+            area: 5.3,
+            latitude: 30.5,
+            longitude: 50.5,
+          },
           name: 'Business 1',
           town: 'Barbate',
           zone: 'America/Caracas',
@@ -61,7 +73,11 @@ describe('resource admin', () => {
           address: 'C/ sin nombre 43',
           city: 'Cádiz',
           country: 'España',
-          location: { area: 3.9, latitude: 35.2, longitude: 45.7 },
+          location: {
+            area: 3.9,
+            latitude: 35.2,
+            longitude: 45.7,
+          },
           name: 'Business 2',
           town: 'Barbate',
           zone: 'Europe/Madrid',

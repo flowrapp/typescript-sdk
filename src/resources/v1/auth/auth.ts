@@ -6,6 +6,9 @@ import { OAuth, OAuthAuthenticateWithGitHubParams, OAuthAuthenticateWithGooglePa
 import { APIPromise } from '../../../core/api-promise';
 import { RequestOptions } from '../../../internal/request-options';
 
+/**
+ * Endpoints for user authentication, token management, and session handling.
+ */
 export class Auth extends APIResource {
   oauth: OAuthAPI.OAuth = new OAuthAPI.OAuth(this._client);
 

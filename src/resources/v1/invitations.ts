@@ -6,6 +6,9 @@ import { APIPromise } from '../../core/api-promise';
 import { buildHeaders } from '../../internal/headers';
 import { RequestOptions } from '../../internal/request-options';
 
+/**
+ * Operations for managing invitations to join businesses.
+ */
 export class Invitations extends APIResource {
   /**
    * Retrieves a list of all invitations for the currently authenticated user.

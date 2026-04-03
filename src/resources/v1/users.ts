@@ -5,6 +5,9 @@ import { APIPromise } from '../../core/api-promise';
 import { buildHeaders } from '../../internal/headers';
 import { RequestOptions } from '../../internal/request-options';
 
+/**
+ * Operations related to user management, including user profile retrieval, creation, and updates.
+ */
 export class Users extends APIResource {
   /**
    * Searches for and retrieves a user profile based on the provided name.

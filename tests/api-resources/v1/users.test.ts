@@ -9,7 +9,7 @@ const client = new Flowrapp({
 });
 
 describe('resource users', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('createFromName: only required params', async () => {
     const responsePromise = client.v1.users.createFromName({ name: 'John Doe' });
     const rawResponse = await responsePromise.asResponse();
@@ -21,12 +21,12 @@ describe('resource users', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('createFromName: required and optional params', async () => {
     const response = await client.v1.users.createFromName({ name: 'John Doe' });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('updatePassword: only required params', async () => {
     const responsePromise = client.v1.users.updatePassword({ password: 'newSecurePassword123' });
     const rawResponse = await responsePromise.asResponse();
@@ -38,7 +38,7 @@ describe('resource users', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('updatePassword: required and optional params', async () => {
     const response = await client.v1.users.updatePassword({ password: 'newSecurePassword123' });
   });
