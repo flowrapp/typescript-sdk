@@ -21,7 +21,6 @@ import { V1, V1PingResponse } from './resources/v1/v1';
 import { type Fetch } from './internal/builtin-types';
 import { HeadersLike, NullableHeaders, buildHeaders } from './internal/headers';
 import { FinalRequestOptions, RequestOptions } from './internal/request-options';
-import { toBase64 } from './internal/utils/base64';
 import { readEnv } from './internal/utils/env';
 import {
   type LogLevel,
@@ -225,24 +224,6 @@ export class Flowrapp {
   }
 
   protected async authHeaders(opts: FinalRequestOptions): Promise<NullableHeaders | undefined> {
-    return buildHeaders([await this.basicAuth(opts), await this.bearerAuth(opts)]);
-  }
-
-  protected async basicAuth(opts: FinalRequestOptions): Promise<NullableHeaders | undefined> {
-    if (!this.username) {
-      return undefined;
-    }
-
-    if (!this.password) {
-      return undefined;
-    }
-
-    const credentials = `${this.username}:${this.password}`;
-    const Authorization = `Basic ${toBase64(credentials)}`;
-    return buildHeaders([{ Authorization }]);
-  }
-
-  protected async bearerAuth(opts: FinalRequestOptions): Promise<NullableHeaders | undefined> {
     if (this.apiKey == null) {
       return undefined;
     }
@@ -757,7 +738,7 @@ export class Flowrapp {
   static toFile = Uploads.toFile;
 
   /**
-   * System utility endpoints for monitoring and health checks.
+   * System utility endpoints for health checks.
    */
   v1: API.V1 = new API.V1(this);
 }
