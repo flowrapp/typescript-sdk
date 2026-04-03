@@ -8,8 +8,8 @@
     "moduleResolution": "node",
     "esModuleInterop": true,
     "paths": {
-      "flowrapp/*": ["./src/*"],
-      "flowrapp": ["./src/index.ts"]
+      "flowrapp-sdk/*": ["./src/*"],
+      "flowrapp-sdk": ["./src/index.ts"]
     },
     "noEmit": true,
 

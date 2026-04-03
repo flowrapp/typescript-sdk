@@ -1,10 +1,10 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIPromise } from 'flowrapp/core/api-promise';
+import { APIPromise } from 'flowrapp-sdk/core/api-promise';
 
 import util from 'node:util';
-import Flowrapp from 'flowrapp';
-import { APIUserAbortError } from 'flowrapp';
+import Flowrapp from 'flowrapp-sdk';
+import { APIUserAbortError } from 'flowrapp-sdk';
 const defaultFetch = fetch;
 
 describe('instantiate client', () => {

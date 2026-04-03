@@ -1,5 +1,5 @@
-import { multipartFormRequestOptions, createForm } from 'flowrapp/internal/uploads';
-import { toFile } from 'flowrapp/core/uploads';
+import { multipartFormRequestOptions, createForm } from 'flowrapp-sdk/internal/uploads';
+import { toFile } from 'flowrapp-sdk/core/uploads';
 
 describe('form data validation', () => {
   test('valid values do not error', async () => {
