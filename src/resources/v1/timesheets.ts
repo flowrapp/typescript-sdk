@@ -4,6 +4,9 @@ import { APIResource } from '../../core/resource';
 import { APIPromise } from '../../core/api-promise';
 import { RequestOptions } from '../../internal/request-options';
 
+/**
+ * Reporting and analytics endpoints that provide aggregated data and insights.
+ */
 export class Timesheets extends APIResource {
   /**
    * Retrieves the weekly hours report for the authenticated user.
@@ -64,6 +67,11 @@ export namespace TimesheetRetrieveWeeklyHoursResponse {
      * Hours worked per day
      */
     dailyHours: { [key: string]: string };
+
+    /**
+     * Email address of the user
+     */
+    email: string;
 
     /**
      * Total hours worked in the week

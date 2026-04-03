@@ -6,6 +6,9 @@ import { APIPromise } from '../../core/api-promise';
 import { buildHeaders } from '../../internal/headers';
 import { RequestOptions } from '../../internal/request-options';
 
+/**
+ * Administrative operations that require elevated privileges.
+ */
 export class Admin extends APIResource {
   /**
    * Creates a new user account in the system with associations to one or more

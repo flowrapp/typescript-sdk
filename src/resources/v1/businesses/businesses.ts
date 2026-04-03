@@ -30,6 +30,9 @@ import { APIPromise } from '../../../core/api-promise';
 import { RequestOptions } from '../../../internal/request-options';
 import { path } from '../../../internal/utils/path';
 
+/**
+ * Operations for managing business entities.
+ */
 export class Businesses extends APIResource {
   worklogs: WorklogsAPI.Worklogs = new WorklogsAPI.Worklogs(this._client);
   invitations: InvitationsAPI.Invitations = new InvitationsAPI.Invitations(this._client);

@@ -9,7 +9,7 @@ const client = new Flowrapp({
 });
 
 describe('resource oauth', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('authenticateWithGitHub: only required params', async () => {
     const responsePromise = client.v1.auth.oauth.authenticateWithGitHub({
       credential: 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjE2MjM0NTY3ODkwIn0...',
@@ -23,14 +23,14 @@ describe('resource oauth', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('authenticateWithGitHub: required and optional params', async () => {
     const response = await client.v1.auth.oauth.authenticateWithGitHub({
       credential: 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjE2MjM0NTY3ODkwIn0...',
     });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('authenticateWithGoogle: only required params', async () => {
     const responsePromise = client.v1.auth.oauth.authenticateWithGoogle({
       credential: 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjE2MjM0NTY3ODkwIn0...',
@@ -44,7 +44,7 @@ describe('resource oauth', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('authenticateWithGoogle: required and optional params', async () => {
     const response = await client.v1.auth.oauth.authenticateWithGoogle({
       credential: 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjE2MjM0NTY3ODkwIn0...',

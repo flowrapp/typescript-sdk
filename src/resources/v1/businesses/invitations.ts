@@ -6,6 +6,9 @@ import { buildHeaders } from '../../../internal/headers';
 import { RequestOptions } from '../../../internal/request-options';
 import { path } from '../../../internal/utils/path';
 
+/**
+ * Operations for managing invitations to join businesses.
+ */
 export class Invitations extends APIResource {
   /**
    * Creates a new invitation to join a business with a specified role.

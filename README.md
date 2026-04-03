@@ -22,10 +22,7 @@ The full API of this library can be found in [api.md](api.md).
 ```js
 import Flowrapp from 'flowrapp-sdk';
 
-const client = new Flowrapp({
-  username: process.env['FLOWRAPP_USERNAME'], // This is the default and can be omitted
-  password: process.env['FLOWRAPP_PASSWORD'], // This is the default and can be omitted
-});
+const client = new Flowrapp();
 
 const response = await client.v1.ping();
 
@@ -40,10 +37,7 @@ This library includes TypeScript definitions for all request params and response
 ```ts
 import Flowrapp from 'flowrapp-sdk';
 
-const client = new Flowrapp({
-  username: process.env['FLOWRAPP_USERNAME'], // This is the default and can be omitted
-  password: process.env['FLOWRAPP_PASSWORD'], // This is the default and can be omitted
-});
+const client = new Flowrapp();
 
 const response: Flowrapp.V1PingResponse = await client.v1.ping();
 ```

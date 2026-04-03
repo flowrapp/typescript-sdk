@@ -9,7 +9,7 @@ const client = new Flowrapp({
 });
 
 describe('resource worklogs', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('retrieve', async () => {
     const responsePromise = client.v1.worklogs.retrieve(0);
     const rawResponse = await responsePromise.asResponse();
@@ -21,7 +21,7 @@ describe('resource worklogs', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('update', async () => {
     const responsePromise = client.v1.worklogs.update(0, {});
     const rawResponse = await responsePromise.asResponse();
@@ -33,7 +33,7 @@ describe('resource worklogs', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('list', async () => {
     const responsePromise = client.v1.worklogs.list();
     const rawResponse = await responsePromise.asResponse();
@@ -45,12 +45,17 @@ describe('resource worklogs', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('list: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       client.v1.worklogs.list(
-        { businessId: 123, date: '2025-07-29', from: '2025-07-22', to: '2025-07-28' },
+        {
+          businessId: 123,
+          date: '2025-07-29',
+          from: '2025-07-22',
+          to: '2025-07-28',
+        },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Flowrapp.NotFoundError);

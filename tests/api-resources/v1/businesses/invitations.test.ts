@@ -9,7 +9,7 @@ const client = new Flowrapp({
 });
 
 describe('resource invitations', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.v1.businesses.invitations.create(0, {
       email: 'invitee@example.com',
@@ -24,7 +24,7 @@ describe('resource invitations', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.v1.businesses.invitations.create(0, {
       email: 'invitee@example.com',
@@ -32,7 +32,7 @@ describe('resource invitations', () => {
     });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('list', async () => {
     const responsePromise = client.v1.businesses.invitations.list(0);
     const rawResponse = await responsePromise.asResponse();
@@ -44,7 +44,7 @@ describe('resource invitations', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('list: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -52,7 +52,7 @@ describe('resource invitations', () => {
     ).rejects.toThrow(Flowrapp.NotFoundError);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('delete: only required params', async () => {
     const responsePromise = client.v1.businesses.invitations.delete(0, { businessId: 0 });
     const rawResponse = await responsePromise.asResponse();
@@ -64,7 +64,7 @@ describe('resource invitations', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('delete: required and optional params', async () => {
     const response = await client.v1.businesses.invitations.delete(0, { businessId: 0 });
   });

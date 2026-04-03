@@ -9,7 +9,7 @@ const client = new Flowrapp({
 });
 
 describe('resource pushTokens', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('delete', async () => {
     const responsePromise = client.v1.pushTokens.delete('deviceId');
     const rawResponse = await responsePromise.asResponse();
@@ -21,7 +21,7 @@ describe('resource pushTokens', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('register: only required params', async () => {
     const responsePromise = client.v1.pushTokens.register({
       token: 'abcdef123456',
@@ -37,7 +37,7 @@ describe('resource pushTokens', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('register: required and optional params', async () => {
     const response = await client.v1.pushTokens.register({
       token: 'abcdef123456',
