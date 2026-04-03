@@ -5,6 +5,9 @@ import { APIPromise } from '../../../core/api-promise';
 import { RequestOptions } from '../../../internal/request-options';
 import { path } from '../../../internal/utils/path';
 
+/**
+ * Time tracking recording and management operations.
+ */
 export class Worklogs extends APIResource {
   /**
    * Retrieves a collection of worklog records for a specific business, filtered by

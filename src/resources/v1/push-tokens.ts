@@ -6,6 +6,9 @@ import { buildHeaders } from '../../internal/headers';
 import { RequestOptions } from '../../internal/request-options';
 import { path } from '../../internal/utils/path';
 
+/**
+ * Operations for managing push notification tokens.
+ */
 export class PushTokens extends APIResource {
   /**
    * Deletes a device push notification token for the authenticated user

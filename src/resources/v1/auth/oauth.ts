@@ -5,6 +5,9 @@ import * as AuthAPI from './auth';
 import { APIPromise } from '../../../core/api-promise';
 import { RequestOptions } from '../../../internal/request-options';
 
+/**
+ * Endpoints for user authentication, token management, and session handling.
+ */
 export class OAuth extends APIResource {
   /**
    * Exchanges a GitHub OAuth authorization code for Flowrapp access and refresh

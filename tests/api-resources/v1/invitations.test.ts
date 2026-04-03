@@ -9,7 +9,7 @@ const client = new Flowrapp({
 });
 
 describe('resource invitations', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('list', async () => {
     const responsePromise = client.v1.invitations.list();
     const rawResponse = await responsePromise.asResponse();
@@ -21,7 +21,7 @@ describe('resource invitations', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('list: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -29,7 +29,7 @@ describe('resource invitations', () => {
     ).rejects.toThrow(Flowrapp.NotFoundError);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('accept: only required params', async () => {
     const responsePromise = client.v1.invitations.accept({ token: 'ecc2efdd-ddfa-31a9-c6f1-b833d337aa7c' });
     const rawResponse = await responsePromise.asResponse();
@@ -41,12 +41,12 @@ describe('resource invitations', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('accept: required and optional params', async () => {
     const response = await client.v1.invitations.accept({ token: 'ecc2efdd-ddfa-31a9-c6f1-b833d337aa7c' });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('register: only required params', async () => {
     const responsePromise = client.v1.invitations.register({
       token: 'ecc2efdd-ddfa-31a9-c6f1-b833d337aa7c',
@@ -63,7 +63,7 @@ describe('resource invitations', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('register: required and optional params', async () => {
     const response = await client.v1.invitations.register({
       token: 'ecc2efdd-ddfa-31a9-c6f1-b833d337aa7c',

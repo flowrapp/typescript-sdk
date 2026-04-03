@@ -41,6 +41,9 @@ import {
 import { APIPromise } from '../../core/api-promise';
 import { RequestOptions } from '../../internal/request-options';
 
+/**
+ * System utility endpoints for monitoring and health checks.
+ */
 export class V1 extends APIResource {
   users: UsersAPI.Users = new UsersAPI.Users(this._client);
   pushTokens: PushTokensAPI.PushTokens = new PushTokensAPI.PushTokens(this._client);
