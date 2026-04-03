@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import Flowrapp from 'flowrapp-sdk';
+import Flowrapp from 'flowrapp';
 
 const client = new Flowrapp({
   apiKey: 'My API Key',
@@ -9,8 +9,8 @@ const client = new Flowrapp({
 
 describe('resource oauth', () => {
   // Mock server tests are disabled
-  test.skip('authenticateWithGitHub: only required params', async () => {
-    const responsePromise = client.v1.auth.oauth.authenticateWithGitHub({
+  test.skip('githubAuthenticate: only required params', async () => {
+    const responsePromise = client.v1.auth.oauth.githubAuthenticate({
       credential: 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjE2MjM0NTY3ODkwIn0...',
     });
     const rawResponse = await responsePromise.asResponse();
@@ -23,15 +23,15 @@ describe('resource oauth', () => {
   });
 
   // Mock server tests are disabled
-  test.skip('authenticateWithGitHub: required and optional params', async () => {
-    const response = await client.v1.auth.oauth.authenticateWithGitHub({
+  test.skip('githubAuthenticate: required and optional params', async () => {
+    const response = await client.v1.auth.oauth.githubAuthenticate({
       credential: 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjE2MjM0NTY3ODkwIn0...',
     });
   });
 
   // Mock server tests are disabled
-  test.skip('authenticateWithGoogle: only required params', async () => {
-    const responsePromise = client.v1.auth.oauth.authenticateWithGoogle({
+  test.skip('googleAuthenticate: only required params', async () => {
+    const responsePromise = client.v1.auth.oauth.googleAuthenticate({
       credential: 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjE2MjM0NTY3ODkwIn0...',
     });
     const rawResponse = await responsePromise.asResponse();
@@ -44,8 +44,8 @@ describe('resource oauth', () => {
   });
 
   // Mock server tests are disabled
-  test.skip('authenticateWithGoogle: required and optional params', async () => {
-    const response = await client.v1.auth.oauth.authenticateWithGoogle({
+  test.skip('googleAuthenticate: required and optional params', async () => {
+    const response = await client.v1.auth.oauth.googleAuthenticate({
       credential: 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjE2MjM0NTY3ODkwIn0...',
     });
   });

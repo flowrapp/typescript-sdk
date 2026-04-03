@@ -1,10 +1,10 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIPromise } from 'flowrapp-sdk/core/api-promise';
+import { APIPromise } from 'flowrapp/core/api-promise';
 
 import util from 'node:util';
-import Flowrapp from 'flowrapp-sdk';
-import { APIUserAbortError } from 'flowrapp-sdk';
+import Flowrapp from 'flowrapp';
+import { APIUserAbortError } from 'flowrapp';
 const defaultFetch = fetch;
 
 describe('instantiate client', () => {
@@ -322,13 +322,13 @@ describe('instantiate client', () => {
     test('empty env variable', () => {
       process.env['FLOWRAPP_BASE_URL'] = ''; // empty
       const client = new Flowrapp({ apiKey: 'My API Key' });
-      expect(client.baseURL).toEqual('http://localhost:8080/flowrapp');
+      expect(client.baseURL).toEqual('http://localhost:8081/flowrapp-bff');
     });
 
     test('blank env variable', () => {
       process.env['FLOWRAPP_BASE_URL'] = '  '; // blank
       const client = new Flowrapp({ apiKey: 'My API Key' });
-      expect(client.baseURL).toEqual('http://localhost:8080/flowrapp');
+      expect(client.baseURL).toEqual('http://localhost:8081/flowrapp-bff');
     });
 
     test('in request options', () => {
