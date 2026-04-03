@@ -1,12 +1,12 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../../core/resource';
+import * as AuthAPI from './auth';
+import { Auth, AuthLoginParams, AuthRefreshTokenParams, TokenResponse } from './auth';
 import * as MeAPI from './me';
 import { Me, MeRetrieveProfileResponse, MeUpdatePasswordParams } from './me';
 import * as PushTokensAPI from './push-tokens';
 import { PushTokenRegisterParams, PushTokens } from './push-tokens';
-import * as AuthAPI from './auth/auth';
-import { Auth, AuthLoginParams, AuthRefreshTokenParams, TokenResponse } from './auth/auth';
 import * as ManagerAPI from './manager/manager';
 import { Manager } from './manager/manager';
 import * as WorkerAPI from './worker/worker';
