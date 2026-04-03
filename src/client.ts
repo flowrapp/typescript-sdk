@@ -17,7 +17,7 @@ import * as Errors from './core/error';
 import * as Uploads from './core/uploads';
 import * as API from './resources/index';
 import { APIPromise } from './core/api-promise';
-import { V1, V1PingResponse } from './resources/v1/v1';
+import { V1, V1CheckHealthResponse } from './resources/v1/v1';
 import { type Fetch } from './internal/builtin-types';
 import { HeadersLike, NullableHeaders, buildHeaders } from './internal/headers';
 import { FinalRequestOptions, RequestOptions } from './internal/request-options';
@@ -33,19 +33,9 @@ import { isEmptyObj } from './internal/utils/values';
 
 export interface ClientOptions {
   /**
-   * Basic authentication with username and password
+   * JWT-based authentication. Tokens are obtained via the login or OAuth endpoints.
    */
-  username?: string | null | undefined;
-
-  /**
-   * Basic authentication with username and password
-   */
-  password?: string | null | undefined;
-
-  /**
-   * JWT-based authentication
-   */
-  apiKey?: string | null | undefined;
+  apiKey?: string | undefined;
 
   /**
    * Override the default base URL for the API, e.g., "https://api.example.com/v2/"
@@ -120,9 +110,7 @@ export interface ClientOptions {
  * API Client for interfacing with the Flowrapp API.
  */
 export class Flowrapp {
-  username: string | null;
-  password: string | null;
-  apiKey: string | null;
+  apiKey: string;
 
   baseURL: string;
   maxRetries: number;
@@ -139,10 +127,8 @@ export class Flowrapp {
   /**
    * API Client for interfacing with the Flowrapp API.
    *
-   * @param {string | null | undefined} [opts.username=process.env['FLOWRAPP_USERNAME'] ?? null]
-   * @param {string | null | undefined} [opts.password=process.env['FLOWRAPP_PASSWORD'] ?? null]
-   * @param {string | null | undefined} [opts.apiKey=process.env['FLOWRAPP_API_KEY'] ?? null]
-   * @param {string} [opts.baseURL=process.env['FLOWRAPP_BASE_URL'] ?? http://localhost:8080/flowrapp] - Override the default base URL for the API.
+   * @param {string | undefined} [opts.apiKey=process.env['FLOWRAPP_API_KEY'] ?? undefined]
+   * @param {string} [opts.baseURL=process.env['FLOWRAPP_BASE_URL'] ?? http://localhost:8081/flowrapp-bff] - Override the default base URL for the API.
    * @param {number} [opts.timeout=1 minute] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
    * @param {MergedRequestInit} [opts.fetchOptions] - Additional `RequestInit` options to be passed to `fetch` calls.
    * @param {Fetch} [opts.fetch] - Specify a custom `fetch` function implementation.
@@ -152,17 +138,19 @@ export class Flowrapp {
    */
   constructor({
     baseURL = readEnv('FLOWRAPP_BASE_URL'),
-    username = readEnv('FLOWRAPP_USERNAME') ?? null,
-    password = readEnv('FLOWRAPP_PASSWORD') ?? null,
-    apiKey = readEnv('FLOWRAPP_API_KEY') ?? null,
+    apiKey = readEnv('FLOWRAPP_API_KEY'),
     ...opts
   }: ClientOptions = {}) {
+    if (apiKey === undefined) {
+      throw new Errors.FlowrappError(
+        "The FLOWRAPP_API_KEY environment variable is missing or empty; either provide it, or instantiate the Flowrapp client with an apiKey option, like new Flowrapp({ apiKey: 'My API Key' }).",
+      );
+    }
+
     const options: ClientOptions = {
-      username,
-      password,
       apiKey,
       ...opts,
-      baseURL: baseURL || `http://localhost:8080/flowrapp`,
+      baseURL: baseURL || `http://localhost:8081/flowrapp-bff`,
     };
 
     this.baseURL = options.baseURL!;
@@ -182,8 +170,6 @@ export class Flowrapp {
 
     this._options = options;
 
-    this.username = username;
-    this.password = password;
     this.apiKey = apiKey;
   }
 
@@ -200,8 +186,6 @@ export class Flowrapp {
       logLevel: this.logLevel,
       fetch: this.fetch,
       fetchOptions: this.fetchOptions,
-      username: this.username,
-      password: this.password,
       apiKey: this.apiKey,
       ...options,
     });
@@ -212,7 +196,7 @@ export class Flowrapp {
    * Check whether the base URL is set to its default.
    */
   #baseURLOverridden(): boolean {
-    return this.baseURL !== 'http://localhost:8080/flowrapp';
+    return this.baseURL !== 'http://localhost:8081/flowrapp-bff';
   }
 
   protected defaultQuery(): Record<string, string | undefined> | undefined {
@@ -223,10 +207,14 @@ export class Flowrapp {
     return;
   }
 
-  protected async authHeaders(opts: FinalRequestOptions): Promise<NullableHeaders | undefined> {
-    if (this.apiKey == null) {
-      return undefined;
-    }
+  protected async authHeaders(
+    opts: FinalRequestOptions,
+    schemes: { bearerAuth?: boolean },
+  ): Promise<NullableHeaders | undefined> {
+    return buildHeaders([schemes.bearerAuth ? await this.bearerAuth(opts) : null]);
+  }
+
+  protected async bearerAuth(opts: FinalRequestOptions): Promise<NullableHeaders | undefined> {
     return buildHeaders([{ Authorization: `Bearer ${this.apiKey}` }]);
   }
 
@@ -656,7 +644,7 @@ export class Flowrapp {
         ...(options.timeout ? { 'X-Stainless-Timeout': String(Math.trunc(options.timeout / 1000)) } : {}),
         ...getPlatformHeaders(),
       },
-      await this.authHeaders(options),
+      await this.authHeaders(options, options.__security ?? { bearerAuth: true }),
       this._options.defaultHeaders,
       bodyHeaders,
       options.headers,
@@ -748,5 +736,5 @@ Flowrapp.V1 = V1;
 export declare namespace Flowrapp {
   export type RequestOptions = Opts.RequestOptions;
 
-  export { V1 as V1, type V1PingResponse as V1PingResponse };
+  export { V1 as V1, type V1CheckHealthResponse as V1CheckHealthResponse };
 }
