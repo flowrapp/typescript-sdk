@@ -1,5 +1,30 @@
 # Changelog
 
+## 0.1.0-alpha.19 (2026-04-03)
+
+Full Changelog: [v0.1.0-alpha.18...v0.1.0-alpha.19](https://github.com/flowrapp/typescript-sdk/compare/v0.1.0-alpha.18...v0.1.0-alpha.19)
+
+### Features
+
+* **api:** api update ([4da6eb5](https://github.com/flowrapp/typescript-sdk/commit/4da6eb55d1cedeb286bb60c8038191b1c56c36c8))
+
+
+### Performance Improvements
+
+* faster formatting ([a6491f2](https://github.com/flowrapp/typescript-sdk/commit/a6491f26c9be050fe6cec38cd23130ebcf980371))
+
+
+### Chores
+
+* do not install brew dependencies in ./scripts/bootstrap by default ([aee929b](https://github.com/flowrapp/typescript-sdk/commit/aee929be9ef82e144c9a23686363e4676dda7c8d))
+* **internal:** codegen related update ([31588db](https://github.com/flowrapp/typescript-sdk/commit/31588db47e896a2aa78637704e71a6fb1b883f8c))
+* **internal:** fix incremental formatting in some cases ([fb9874a](https://github.com/flowrapp/typescript-sdk/commit/fb9874a9838a60cda49ca9f4f97fed8bef2d9594))
+* **internal:** ignore .eslintcache ([94f2f30](https://github.com/flowrapp/typescript-sdk/commit/94f2f30a038f9fff461b1afd3889f0585c25ac6b))
+* **internal:** remove .eslintcache ([91a85de](https://github.com/flowrapp/typescript-sdk/commit/91a85de2ed36f427b42f706dcb708759932a72b9))
+* **internal:** remove deprecated `compilerOptions.baseUrl` from tsconfig.json ([ec0fff5](https://github.com/flowrapp/typescript-sdk/commit/ec0fff52d9dd1177cc12dd8d5bc7537ed6e634d5))
+* **internal:** use npm pack for build uploads ([1c49fca](https://github.com/flowrapp/typescript-sdk/commit/1c49fca5c781e66574fade7310cbcb34af45d1e5))
+* **jsdoc:** fix [@link](https://github.com/link) annotations to refer only to parts of the package‘s public interface ([185ac79](https://github.com/flowrapp/typescript-sdk/commit/185ac79f65b0fbd6417b7f76cb6a49e17d2381c4))
+
 ## 0.1.0-alpha.18 (2025-09-19)
 
 Full Changelog: [v0.1.0-alpha.17...v0.1.0-alpha.18](https://github.com/flowrapp/typescript-sdk/compare/v0.1.0-alpha.17...v0.1.0-alpha.18)
