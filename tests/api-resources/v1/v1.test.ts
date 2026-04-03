@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import Flowrapp from 'flowrapp-sdk';
+import Flowrapp from 'flowrapp';
 
 const client = new Flowrapp({
   apiKey: 'My API Key',
@@ -9,8 +9,8 @@ const client = new Flowrapp({
 
 describe('resource v1', () => {
   // Mock server tests are disabled
-  test.skip('ping', async () => {
-    const responsePromise = client.v1.ping();
+  test.skip('checkHealth', async () => {
+    const responsePromise = client.v1.checkHealth();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;

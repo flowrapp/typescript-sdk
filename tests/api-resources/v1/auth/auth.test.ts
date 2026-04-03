@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import Flowrapp from 'flowrapp-sdk';
+import Flowrapp from 'flowrapp';
 
 const client = new Flowrapp({
   apiKey: 'My API Key',

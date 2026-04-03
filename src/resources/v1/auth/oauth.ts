@@ -16,17 +16,17 @@ export class OAuth extends APIResource {
    * @example
    * ```ts
    * const tokenResponse =
-   *   await client.v1.auth.oauth.authenticateWithGitHub({
+   *   await client.v1.auth.oauth.githubAuthenticate({
    *     credential:
    *       'eyJhbGciOiJSUzI1NiIsImtpZCI6IjE2MjM0NTY3ODkwIn0...',
    *   });
    * ```
    */
-  authenticateWithGitHub(
-    body: OAuthAuthenticateWithGitHubParams,
+  githubAuthenticate(
+    body: OAuthGitHubAuthenticateParams,
     options?: RequestOptions,
   ): APIPromise<AuthAPI.TokenResponse> {
-    return this._client.post('/api/v1/auth/oauth/github', { body, ...options });
+    return this._client.post('/api/v1/auth/oauth/github', { body, ...options, __security: {} });
   }
 
   /**
@@ -36,21 +36,24 @@ export class OAuth extends APIResource {
    * @example
    * ```ts
    * const tokenResponse =
-   *   await client.v1.auth.oauth.authenticateWithGoogle({
+   *   await client.v1.auth.oauth.googleAuthenticate({
    *     credential:
    *       'eyJhbGciOiJSUzI1NiIsImtpZCI6IjE2MjM0NTY3ODkwIn0...',
    *   });
    * ```
    */
-  authenticateWithGoogle(
-    body: OAuthAuthenticateWithGoogleParams,
+  googleAuthenticate(
+    body: OAuthGoogleAuthenticateParams,
     options?: RequestOptions,
   ): APIPromise<AuthAPI.TokenResponse> {
-    return this._client.post('/api/v1/auth/oauth/google', { body, ...options });
+    return this._client.post('/api/v1/auth/oauth/google', { body, ...options, __security: {} });
   }
 }
 
-export interface OAuthAuthenticateWithGitHubParams {
+/**
+ * Request object containing a third-party OAuth credential
+ */
+export interface CredentialRequest {
   /**
    * The credential string obtained from the OAuth provider (e.g., Google ID token or
    * GitHub authorization code)
@@ -58,7 +61,15 @@ export interface OAuthAuthenticateWithGitHubParams {
   credential: string;
 }
 
-export interface OAuthAuthenticateWithGoogleParams {
+export interface OAuthGitHubAuthenticateParams {
+  /**
+   * The credential string obtained from the OAuth provider (e.g., Google ID token or
+   * GitHub authorization code)
+   */
+  credential: string;
+}
+
+export interface OAuthGoogleAuthenticateParams {
   /**
    * The credential string obtained from the OAuth provider (e.g., Google ID token or
    * GitHub authorization code)
@@ -68,7 +79,8 @@ export interface OAuthAuthenticateWithGoogleParams {
 
 export declare namespace OAuth {
   export {
-    type OAuthAuthenticateWithGitHubParams as OAuthAuthenticateWithGitHubParams,
-    type OAuthAuthenticateWithGoogleParams as OAuthAuthenticateWithGoogleParams,
+    type CredentialRequest as CredentialRequest,
+    type OAuthGitHubAuthenticateParams as OAuthGitHubAuthenticateParams,
+    type OAuthGoogleAuthenticateParams as OAuthGoogleAuthenticateParams,
   };
 }

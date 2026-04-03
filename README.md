@@ -1,6 +1,6 @@
 # Flowrapp TypeScript API Library
 
-[![NPM version](<https://img.shields.io/npm/v/flowrapp-sdk.svg?label=npm%20(stable)>)](https://npmjs.org/package/flowrapp-sdk) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/flowrapp-sdk)
+[![NPM version](<https://img.shields.io/npm/v/flowrapp.svg?label=npm%20(stable)>)](https://npmjs.org/package/flowrapp) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/flowrapp)
 
 This library provides convenient access to the Flowrapp REST API from server-side TypeScript or JavaScript.
 
@@ -11,8 +11,11 @@ It is generated with [Stainless](https://www.stainless.com/).
 ## Installation
 
 ```sh
-npm install flowrapp-sdk
+npm install git+ssh://git@github.com:stainless-sdks/flowrapp-typescript.git
 ```
+
+> [!NOTE]
+> Once this package is [published to npm](https://www.stainless.com/docs/guides/publish), this will become: `npm install flowrapp`
 
 ## Usage
 
@@ -20,11 +23,11 @@ The full API of this library can be found in [api.md](api.md).
 
 <!-- prettier-ignore -->
 ```js
-import Flowrapp from 'flowrapp-sdk';
+import Flowrapp from 'flowrapp';
 
 const client = new Flowrapp();
 
-const response = await client.v1.ping();
+const response = await client.v1.checkHealth();
 
 console.log(response.status);
 ```
@@ -35,11 +38,11 @@ This library includes TypeScript definitions for all request params and response
 
 <!-- prettier-ignore -->
 ```ts
-import Flowrapp from 'flowrapp-sdk';
+import Flowrapp from 'flowrapp';
 
 const client = new Flowrapp();
 
-const response: Flowrapp.V1PingResponse = await client.v1.ping();
+const response: Flowrapp.V1CheckHealthResponse = await client.v1.checkHealth();
 ```
 
 Documentation for each method, request param, and response field are available in docstrings and will appear on hover in most modern editors.
@@ -52,7 +55,7 @@ a subclass of `APIError` will be thrown:
 
 <!-- prettier-ignore -->
 ```ts
-const response = await client.v1.ping().catch(async (err) => {
+const response = await client.v1.checkHealth().catch(async (err) => {
   if (err instanceof Flowrapp.APIError) {
     console.log(err.status); // 400
     console.log(err.name); // BadRequestError
@@ -92,7 +95,7 @@ const client = new Flowrapp({
 });
 
 // Or, configure per-request:
-await client.v1.ping({
+await client.v1.checkHealth({
   maxRetries: 5,
 });
 ```
@@ -109,7 +112,7 @@ const client = new Flowrapp({
 });
 
 // Override per-request:
-await client.v1.ping({
+await client.v1.checkHealth({
   timeout: 5 * 1000,
 });
 ```
@@ -132,11 +135,11 @@ Unlike `.asResponse()` this method consumes the body, returning once it is parse
 ```ts
 const client = new Flowrapp();
 
-const response = await client.v1.ping().asResponse();
+const response = await client.v1.checkHealth().asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: response, response: raw } = await client.v1.ping().withResponse();
+const { data: response, response: raw } = await client.v1.checkHealth().withResponse();
 console.log(raw.headers.get('X-My-Header'));
 console.log(response.status);
 ```
@@ -155,7 +158,7 @@ The log level can be configured in two ways:
 2. Using the `logLevel` client option (overrides the environment variable if set)
 
 ```ts
-import Flowrapp from 'flowrapp-sdk';
+import Flowrapp from 'flowrapp';
 
 const client = new Flowrapp({
   logLevel: 'debug', // Show all log messages
@@ -183,7 +186,7 @@ When providing a custom logger, the `logLevel` option still controls which messa
 below the configured level will not be sent to your logger.
 
 ```ts
-import Flowrapp from 'flowrapp-sdk';
+import Flowrapp from 'flowrapp';
 import pino from 'pino';
 
 const logger = pino();
@@ -218,7 +221,7 @@ parameter. This library doesn't validate at runtime that the request matches the
 send will be sent as-is.
 
 ```ts
-client.v1.ping({
+client.v1.checkHealth({
   // ...
   // @ts-expect-error baz is not yet public
   baz: 'undocumented option',
@@ -252,7 +255,7 @@ globalThis.fetch = fetch;
 Or pass it to the client:
 
 ```ts
-import Flowrapp from 'flowrapp-sdk';
+import Flowrapp from 'flowrapp';
 import fetch from 'my-fetch';
 
 const client = new Flowrapp({ fetch });
@@ -263,7 +266,7 @@ const client = new Flowrapp({ fetch });
 If you want to set custom `fetch` options without overriding the `fetch` function, you can provide a `fetchOptions` object when instantiating the client or making a request. (Request-specific options override client options.)
 
 ```ts
-import Flowrapp from 'flowrapp-sdk';
+import Flowrapp from 'flowrapp';
 
 const client = new Flowrapp({
   fetchOptions: {
@@ -280,7 +283,7 @@ options to requests:
 <img src="https://raw.githubusercontent.com/stainless-api/sdk-assets/refs/heads/main/node.svg" align="top" width="18" height="21"> **Node** <sup>[[docs](https://github.com/nodejs/undici/blob/main/docs/docs/api/ProxyAgent.md#example---proxyagent-with-fetch)]</sup>
 
 ```ts
-import Flowrapp from 'flowrapp-sdk';
+import Flowrapp from 'flowrapp';
 import * as undici from 'undici';
 
 const proxyAgent = new undici.ProxyAgent('http://localhost:8888');
@@ -294,7 +297,7 @@ const client = new Flowrapp({
 <img src="https://raw.githubusercontent.com/stainless-api/sdk-assets/refs/heads/main/bun.svg" align="top" width="18" height="21"> **Bun** <sup>[[docs](https://bun.sh/guides/http/proxy)]</sup>
 
 ```ts
-import Flowrapp from 'flowrapp-sdk';
+import Flowrapp from 'flowrapp';
 
 const client = new Flowrapp({
   fetchOptions: {
@@ -306,7 +309,7 @@ const client = new Flowrapp({
 <img src="https://raw.githubusercontent.com/stainless-api/sdk-assets/refs/heads/main/deno.svg" align="top" width="18" height="21"> **Deno** <sup>[[docs](https://docs.deno.com/api/deno/~/Deno.createHttpClient)]</sup>
 
 ```ts
-import Flowrapp from 'npm:flowrapp-sdk';
+import Flowrapp from 'npm:flowrapp';
 
 const httpClient = Deno.createHttpClient({ proxy: { url: 'http://localhost:8888' } });
 const client = new Flowrapp({
@@ -328,7 +331,7 @@ This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) con
 
 We take backwards-compatibility seriously and work hard to ensure you can rely on a smooth upgrade experience.
 
-We are keen for your feedback; please open an [issue](https://www.github.com/flowrapp/typescript-sdk/issues) with questions, bugs, or suggestions.
+We are keen for your feedback; please open an [issue](https://www.github.com/stainless-sdks/flowrapp-typescript/issues) with questions, bugs, or suggestions.
 
 ## Requirements
 

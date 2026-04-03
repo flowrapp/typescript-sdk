@@ -2,7 +2,12 @@
 
 import { APIResource } from '../../../core/resource';
 import * as OAuthAPI from './oauth';
-import { OAuth, OAuthAuthenticateWithGitHubParams, OAuthAuthenticateWithGoogleParams } from './oauth';
+import {
+  CredentialRequest,
+  OAuth,
+  OAuthGitHubAuthenticateParams,
+  OAuthGoogleAuthenticateParams,
+} from './oauth';
 import { APIPromise } from '../../../core/api-promise';
 import { RequestOptions } from '../../../internal/request-options';
 
@@ -26,7 +31,7 @@ export class Auth extends APIResource {
    * ```
    */
   login(body: AuthLoginParams, options?: RequestOptions): APIPromise<TokenResponse> {
-    return this._client.post('/api/v1/auth/login', { body, ...options });
+    return this._client.post('/api/v1/auth/login', { body, ...options, __security: {} });
   }
 
   /**
@@ -41,7 +46,7 @@ export class Auth extends APIResource {
    * ```
    */
   refreshToken(body: AuthRefreshTokenParams, options?: RequestOptions): APIPromise<TokenResponse> {
-    return this._client.post('/api/v1/auth/token-refresh', { body, ...options });
+    return this._client.post('/api/v1/auth/token-refresh', { body, ...options, __security: {} });
   }
 }
 
@@ -90,7 +95,8 @@ export declare namespace Auth {
 
   export {
     OAuth as OAuth,
-    type OAuthAuthenticateWithGitHubParams as OAuthAuthenticateWithGitHubParams,
-    type OAuthAuthenticateWithGoogleParams as OAuthAuthenticateWithGoogleParams,
+    type CredentialRequest as CredentialRequest,
+    type OAuthGitHubAuthenticateParams as OAuthGitHubAuthenticateParams,
+    type OAuthGoogleAuthenticateParams as OAuthGoogleAuthenticateParams,
   };
 }

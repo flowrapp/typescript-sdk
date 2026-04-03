@@ -3,6 +3,7 @@
 export { Auth, type TokenResponse, type AuthLoginParams, type AuthRefreshTokenParams } from './auth';
 export {
   OAuth,
-  type OAuthAuthenticateWithGitHubParams,
-  type OAuthAuthenticateWithGoogleParams,
+  type CredentialRequest,
+  type OAuthGitHubAuthenticateParams,
+  type OAuthGoogleAuthenticateParams,
 } from './oauth';
