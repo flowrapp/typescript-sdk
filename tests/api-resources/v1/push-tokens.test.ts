@@ -3,8 +3,7 @@
 import Flowrapp from 'flowrapp-sdk';
 
 const client = new Flowrapp({
-  username: 'My Username',
-  password: 'My Password',
+  apiKey: 'My API Key',
   baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
 });
 
@@ -24,8 +23,8 @@ describe('resource pushTokens', () => {
   // Mock server tests are disabled
   test.skip('register: only required params', async () => {
     const responsePromise = client.v1.pushTokens.register({
-      token: 'abcdef123456',
-      deviceId: 'uuid-of-device',
+      token: 'fcm-token-abc123xyz',
+      deviceId: '550e8400-e29b-41d4-a716-446655440000',
       platform: 'ANDROID',
     });
     const rawResponse = await responsePromise.asResponse();
@@ -40,8 +39,8 @@ describe('resource pushTokens', () => {
   // Mock server tests are disabled
   test.skip('register: required and optional params', async () => {
     const response = await client.v1.pushTokens.register({
-      token: 'abcdef123456',
-      deviceId: 'uuid-of-device',
+      token: 'fcm-token-abc123xyz',
+      deviceId: '550e8400-e29b-41d4-a716-446655440000',
       platform: 'ANDROID',
     });
   });
