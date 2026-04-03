@@ -2,47 +2,26 @@
 
 import { APIResource } from '../../core/resource';
 import * as AdminAPI from './admin';
-import { Admin, AdminRegisterUserParams } from './admin';
+import { Admin } from './admin';
 import * as InvitationsAPI from './invitations';
-import {
-  InvitationAcceptParams,
-  InvitationListParams,
-  InvitationListResponse,
-  InvitationRegisterParams,
-  Invitations,
-} from './invitations';
+import { Invitations } from './invitations';
 import * as PushTokensAPI from './push-tokens';
 import { PushTokenRegisterParams, PushTokens } from './push-tokens';
 import * as TimesheetsAPI from './timesheets';
-import {
-  TimesheetRetrieveWeeklyHoursParams,
-  TimesheetRetrieveWeeklyHoursResponse,
-  Timesheets,
-} from './timesheets';
+import { Timesheets } from './timesheets';
 import * as UsersAPI from './users';
-import {
-  UserCreateFromNameParams,
-  UserCreateFromNameResponse,
-  UserUpdatePasswordParams,
-  Users,
-} from './users';
+import { Users } from './users';
 import * as WorklogsAPI from './worklogs';
-import { WorklogListParams, WorklogListResponse, WorklogUpdateParams, Worklogs } from './worklogs';
+import { Worklogs } from './worklogs';
 import * as AuthAPI from './auth/auth';
 import { Auth, AuthLoginParams, AuthRefreshTokenParams, TokenResponse } from './auth/auth';
 import * as BusinessesAPI from './businesses/businesses';
-import {
-  BusinessListResponse,
-  BusinessListUsersParams,
-  BusinessListUsersResponse,
-  Businesses,
-  Location,
-} from './businesses/businesses';
+import { Businesses, Location } from './businesses/businesses';
 import { APIPromise } from '../../core/api-promise';
 import { RequestOptions } from '../../internal/request-options';
 
 /**
- * System utility endpoints for monitoring and health checks.
+ * System utility endpoints for health checks.
  */
 export class V1 extends APIResource {
   users: UsersAPI.Users = new UsersAPI.Users(this._client);
@@ -55,7 +34,7 @@ export class V1 extends APIResource {
   timesheets: TimesheetsAPI.Timesheets = new TimesheetsAPI.Timesheets(this._client);
 
   /**
-   * Simple endpoint to verify that the API is up and running
+   * Simple endpoint to verify that the BFF API is up and running
    *
    * @example
    * ```ts
@@ -70,7 +49,7 @@ export class V1 extends APIResource {
 export interface V1PingResponse {
   status: string;
 
-  timestamp?: string;
+  timestamp: string;
 }
 
 V1.Users = Users;
@@ -85,12 +64,7 @@ V1.Timesheets = Timesheets;
 export declare namespace V1 {
   export { type V1PingResponse as V1PingResponse };
 
-  export {
-    Users as Users,
-    type UserCreateFromNameResponse as UserCreateFromNameResponse,
-    type UserCreateFromNameParams as UserCreateFromNameParams,
-    type UserUpdatePasswordParams as UserUpdatePasswordParams,
-  };
+  export { Users as Users };
 
   export { PushTokens as PushTokens, type PushTokenRegisterParams as PushTokenRegisterParams };
 
@@ -101,34 +75,13 @@ export declare namespace V1 {
     type AuthRefreshTokenParams as AuthRefreshTokenParams,
   };
 
-  export { Admin as Admin, type AdminRegisterUserParams as AdminRegisterUserParams };
+  export { Admin as Admin };
 
-  export {
-    Businesses as Businesses,
-    type Location as Location,
-    type BusinessListResponse as BusinessListResponse,
-    type BusinessListUsersResponse as BusinessListUsersResponse,
-    type BusinessListUsersParams as BusinessListUsersParams,
-  };
+  export { Businesses as Businesses, type Location as Location };
 
-  export {
-    Invitations as Invitations,
-    type InvitationListResponse as InvitationListResponse,
-    type InvitationListParams as InvitationListParams,
-    type InvitationAcceptParams as InvitationAcceptParams,
-    type InvitationRegisterParams as InvitationRegisterParams,
-  };
+  export { Invitations as Invitations };
 
-  export {
-    Worklogs as Worklogs,
-    type WorklogListResponse as WorklogListResponse,
-    type WorklogUpdateParams as WorklogUpdateParams,
-    type WorklogListParams as WorklogListParams,
-  };
+  export { Worklogs as Worklogs };
 
-  export {
-    Timesheets as Timesheets,
-    type TimesheetRetrieveWeeklyHoursResponse as TimesheetRetrieveWeeklyHoursResponse,
-    type TimesheetRetrieveWeeklyHoursParams as TimesheetRetrieveWeeklyHoursParams,
-  };
+  export { Timesheets as Timesheets };
 }

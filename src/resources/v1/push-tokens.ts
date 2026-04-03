@@ -7,11 +7,12 @@ import { RequestOptions } from '../../internal/request-options';
 import { path } from '../../internal/utils/path';
 
 /**
- * Operations for managing push notification tokens.
+ * Push notification token management. Pass-through to the main API.
  */
 export class PushTokens extends APIResource {
   /**
-   * Deletes a device push notification token for the authenticated user
+   * Deletes a device push notification token for the authenticated user.
+   * Pass-through to the main API.
    *
    * @example
    * ```ts
@@ -26,13 +27,14 @@ export class PushTokens extends APIResource {
   }
 
   /**
-   * Registers a device push notification token for the authenticated user
+   * Registers a device push notification token for the authenticated user.
+   * Pass-through to the main API.
    *
    * @example
    * ```ts
    * await client.v1.pushTokens.register({
-   *   token: 'abcdef123456',
-   *   deviceId: 'uuid-of-device',
+   *   token: 'fcm-token-abc123xyz',
+   *   deviceId: '550e8400-e29b-41d4-a716-446655440000',
    *   platform: 'ANDROID',
    * });
    * ```
@@ -48,7 +50,7 @@ export class PushTokens extends APIResource {
 
 export interface PushTokenRegisterParams {
   /**
-   * The push notification token
+   * The push notification token from the device
    */
   token: string;
 

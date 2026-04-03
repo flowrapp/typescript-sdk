@@ -6,12 +6,12 @@ import { APIPromise } from '../../../core/api-promise';
 import { RequestOptions } from '../../../internal/request-options';
 
 /**
- * Endpoints for user authentication, token management, and session handling.
+ * User authentication and token management endpoints. These are pass-through proxies to the main API.
  */
 export class OAuth extends APIResource {
   /**
    * Exchanges a GitHub OAuth authorization code for Flowrapp access and refresh
-   * tokens.
+   * tokens. Pass-through to the main API.
    *
    * @example
    * ```ts
@@ -30,8 +30,8 @@ export class OAuth extends APIResource {
   }
 
   /**
-   * Exchanges a Google OAuth credential (such as an ID token or authorization code)
-   * for Flowrapp access and refresh tokens.
+   * Exchanges a Google OAuth credential (ID token) for Flowrapp access and refresh
+   * tokens. Pass-through to the main API.
    *
    * @example
    * ```ts
@@ -52,14 +52,16 @@ export class OAuth extends APIResource {
 
 export interface OAuthAuthenticateWithGitHubParams {
   /**
-   * The credential string obtained from the OAuth provider
+   * The credential string obtained from the OAuth provider (e.g., Google ID token or
+   * GitHub authorization code)
    */
   credential: string;
 }
 
 export interface OAuthAuthenticateWithGoogleParams {
   /**
-   * The credential string obtained from the OAuth provider
+   * The credential string obtained from the OAuth provider (e.g., Google ID token or
+   * GitHub authorization code)
    */
   credential: string;
 }

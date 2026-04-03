@@ -7,21 +7,21 @@ import { APIPromise } from '../../../core/api-promise';
 import { RequestOptions } from '../../../internal/request-options';
 
 /**
- * Endpoints for user authentication, token management, and session handling.
+ * User authentication and token management endpoints. These are pass-through proxies to the main API.
  */
 export class Auth extends APIResource {
   oauth: OAuthAPI.OAuth = new OAuthAPI.OAuth(this._client);
 
   /**
-   * Authenticates a user by validating their username and password credentials. Upon
-   * successful authentication, it generates and returns access and refresh tokens
-   * that can be used for subsequent authorized API requests.
+   * Authenticates a user by validating their email and password credentials. Returns
+   * access and refresh tokens for subsequent API requests. This is a pass-through to
+   * the main API.
    *
    * @example
    * ```ts
    * const tokenResponse = await client.v1.auth.login({
-   *   password: 'pass',
-   *   username: 'user',
+   *   password: 'securePassword123',
+   *   username: 'user@example.com',
    * });
    * ```
    */
@@ -31,7 +31,7 @@ export class Auth extends APIResource {
 
   /**
    * Renews authentication by generating new access and refresh tokens using a valid
-   * refresh token.
+   * refresh token. Pass-through to the main API.
    *
    * @example
    * ```ts
@@ -50,7 +50,7 @@ export class Auth extends APIResource {
  */
 export interface TokenResponse {
   /**
-   * JWT access token
+   * JWT access token for API authorization
    */
   accessToken?: string;
 
@@ -67,14 +67,14 @@ export interface AuthLoginParams {
   password: string;
 
   /**
-   * Username for authentication
+   * Username (email) for authentication
    */
   username: string;
 }
 
 export interface AuthRefreshTokenParams {
   /**
-   * Refresh token for obtaining new access tokens
+   * Refresh token previously issued during login
    */
   refreshToken: string;
 }
