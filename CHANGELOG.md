@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.1.0-alpha.24 (2026-04-28)
+
+Full Changelog: [v0.1.0-alpha.23...v0.1.0-alpha.24](https://github.com/flowrapp/typescript-sdk/compare/v0.1.0-alpha.23...v0.1.0-alpha.24)
+
+### Features
+
+* support setting headers via env ([dc470bc](https://github.com/flowrapp/typescript-sdk/commit/dc470bc7f3cf9ca425026d1e1861a991c7d1e98b))
+
+
+### Chores
+
+* **internal:** codegen related update ([5fa6374](https://github.com/flowrapp/typescript-sdk/commit/5fa63747178a30e3b84016b8a502e2427197d550))
+* **internal:** codegen related update ([e9938a0](https://github.com/flowrapp/typescript-sdk/commit/e9938a092e91eaae24cfd13adf3dad62340130d9))
+* **internal:** more robust bootstrap script ([44bd378](https://github.com/flowrapp/typescript-sdk/commit/44bd3782609988b52c4c3fd5a9c77b6152489528))
+
 ## 0.1.0-alpha.23 (2026-04-03)
 
 Full Changelog: [v0.1.0-alpha.22...v0.1.0-alpha.23](https://github.com/flowrapp/typescript-sdk/compare/v0.1.0-alpha.22...v0.1.0-alpha.23)
