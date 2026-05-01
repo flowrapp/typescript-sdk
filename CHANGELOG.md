@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.25 (2026-05-01)
+
+Full Changelog: [v0.1.0-alpha.24...v0.1.0-alpha.25](https://github.com/flowrapp/typescript-sdk/compare/v0.1.0-alpha.24...v0.1.0-alpha.25)
+
+### Chores
+
+* **format:** run eslint and prettier separately ([acaaa58](https://github.com/flowrapp/typescript-sdk/commit/acaaa58646e26641a48084b335b5db179ab2d033))
+
 ## 0.1.0-alpha.24 (2026-04-28)
 
 Full Changelog: [v0.1.0-alpha.23...v0.1.0-alpha.24](https://github.com/flowrapp/typescript-sdk/compare/v0.1.0-alpha.23...v0.1.0-alpha.24)
