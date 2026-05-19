@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.1.0-alpha.25 (2026-05-19)
+
+Full Changelog: [v0.1.0-alpha.24...v0.1.0-alpha.25](https://github.com/flowrapp/typescript-sdk/compare/v0.1.0-alpha.24...v0.1.0-alpha.25)
+
+### Bug Fixes
+
+* **typescript:** upgrade tsc-multi so that it works with Node 26 ([2a1361c](https://github.com/flowrapp/typescript-sdk/commit/2a1361ccb097002d22f8de36097f8fcf1c8527fe))
+
+
+### Chores
+
+* **format:** run eslint and prettier separately ([acaaa58](https://github.com/flowrapp/typescript-sdk/commit/acaaa58646e26641a48084b335b5db179ab2d033))
+* redact api-key headers in debug logs ([5d57407](https://github.com/flowrapp/typescript-sdk/commit/5d574075814403e27564de09169b0c0cbffef67e))
+* **tests:** remove redundant File import ([0eb1a45](https://github.com/flowrapp/typescript-sdk/commit/0eb1a45d39afed98a644d2a51e0d813a7bd09129))
+
 ## 0.1.0-alpha.24 (2026-04-28)
 
 Full Changelog: [v0.1.0-alpha.23...v0.1.0-alpha.24](https://github.com/flowrapp/typescript-sdk/compare/v0.1.0-alpha.23...v0.1.0-alpha.24)
