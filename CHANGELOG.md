@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.26 (2026-06-17)
+
+Full Changelog: [v0.1.0-alpha.25...v0.1.0-alpha.26](https://github.com/flowrapp/typescript-sdk/compare/v0.1.0-alpha.25...v0.1.0-alpha.26)
+
+### Bug Fixes
+
+* **client:** send content-type header for requests with an omitted optional body ([cf2f38a](https://github.com/flowrapp/typescript-sdk/commit/cf2f38a7aba2548f3e2aab729b0a3dd7f34f069e))
+
 ## 0.1.0-alpha.25 (2026-05-19)
 
 Full Changelog: [v0.1.0-alpha.24...v0.1.0-alpha.25](https://github.com/flowrapp/typescript-sdk/compare/v0.1.0-alpha.24...v0.1.0-alpha.25)
