@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.27 (2026-07-11)
+
+Full Changelog: [v0.1.0-alpha.26...v0.1.0-alpha.27](https://github.com/flowrapp/typescript-sdk/compare/v0.1.0-alpha.26...v0.1.0-alpha.27)
+
+### Bug Fixes
+
+* **ci:** bump @arethetypeswrong/cli to ^0.18.0 and run CI workflows on Node 24 ([ea0a2d1](https://github.com/flowrapp/typescript-sdk/commit/ea0a2d14dd444a70b687080729cce83e8bc341ee))
+
 ## 0.1.0-alpha.26 (2026-06-17)
 
 Full Changelog: [v0.1.0-alpha.25...v0.1.0-alpha.26](https://github.com/flowrapp/typescript-sdk/compare/v0.1.0-alpha.25...v0.1.0-alpha.26)
