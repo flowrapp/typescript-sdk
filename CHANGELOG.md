@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.28 (2026-07-18)
+
+Full Changelog: [v0.1.0-alpha.27...v0.1.0-alpha.28](https://github.com/flowrapp/typescript-sdk/compare/v0.1.0-alpha.27...v0.1.0-alpha.28)
+
+### Features
+
+* **stlc:** configurable CI runner and private-production-repo support in workflow templates ([bf74f67](https://github.com/flowrapp/typescript-sdk/commit/bf74f677548ca58c793132f17a3bf25c40b9ba78))
+
 ## 0.1.0-alpha.27 (2026-07-11)
 
 Full Changelog: [v0.1.0-alpha.26...v0.1.0-alpha.27](https://github.com/flowrapp/typescript-sdk/compare/v0.1.0-alpha.26...v0.1.0-alpha.27)
